@@ -12,6 +12,11 @@ The storage system consists of:
 
 ## 🏗️ Building Your First Storage Network
 
+### ⚠️ Critical Setup Order
+1. **Power FIRST** - Storage Core needs active power to form network
+2. **Drive SECOND** - Insert at least one drive after powering
+3. **Terminal LAST** - Only works with formed network
+
 ### Step 1: Craft the Storage Core
 
 **Recipe:**
@@ -54,9 +59,18 @@ I = Iron Ingot
 
 ### Step 3: Insert Drives into Storage Core
 
-1. Right-click the Storage Core to open its GUI
-2. Place Storage Drives in the drive slots
-3. The core will light up when powered and active
+**IMPORTANT: Network Formation Requirements**
+The Storage Core requires TWO things to form a network:
+1. **Power** - Must have energy stored (connect to power first!)
+2. **At least one Storage Drive** - Network won't form without drives
+
+**Steps to Form Network:**
+1. Connect Storage Core to power source (Energy Conduit from generator)
+2. Wait for power to charge (check if block has energy)
+3. Right-click Storage Core - if you see "Storage network not formed!", you need power first
+4. Once powered, insert at least one Storage Drive
+5. The network will form automatically (block state changes)
+6. Now you can access the GUI properly
 
 ### Step 4: Place Storage Terminal
 
@@ -74,6 +88,27 @@ P = Storage Processor
 ```
 
 Place the Storage Terminal adjacent to or connected via cable to the Storage Core.
+
+### Complete Working Setup Example
+```
+[G] → [E] → [C] ← [T]
+           ↑
+         [Drive]
+
+G = Generator (with fuel!)
+E = Energy Storage (optional but recommended)
+C = Storage Core (with drive inserted)
+T = Storage Terminal
+→ = Energy Conduit
+```
+
+**Setup Checklist:**
+- [ ] Generator has fuel and is producing power
+- [ ] Storage Core is connected to power via conduits
+- [ ] Storage Core has at least one drive inserted
+- [ ] Wait 1 second for network to form
+- [ ] Storage Terminal is placed adjacent to Core
+- [ ] Network formed! (Core appearance changes)
 
 ## 💡 How It Works
 
@@ -156,10 +191,17 @@ A = Advanced Processor
 
 ### Troubleshooting
 
+**"Storage network not formed!" Error:**
+This is the most common issue! The network requires:
+1. **Power connected and charged** - Connect Energy Conduit from generator
+2. **At least one Storage Drive inserted** - No drives = no network
+3. Wait a second after inserting drive for network to form
+
 **Network Not Working:**
-- Check power supply
-- Ensure all components are connected
-- Verify Storage Core has at least one drive
+- Check power supply (must have energy stored, not just connected)
+- Ensure Storage Core has at least one drive installed
+- Verify all components are connected
+- The Storage Core checks formation every second (20 ticks)
 
 **Can't Store Items:**
 - Check if drives are full (type limit reached)
