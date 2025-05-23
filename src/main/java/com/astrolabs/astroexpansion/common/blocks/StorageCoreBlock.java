@@ -58,11 +58,17 @@ public class StorageCoreBlock extends BaseEntityBlock {
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         if (!level.isClientSide()) {
             BlockEntity entity = level.getBlockEntity(pos);
-            if (entity instanceof StorageCoreBlockEntity) {
-                if (state.getValue(FORMED)) {
-                    NetworkHooks.openScreen(((ServerPlayer) player), (StorageCoreBlockEntity) entity, pos);
-                } else {
-                    player.displayClientMessage(Component.literal("Storage network not formed!"), true);
+            if (entity instanceof StorageCoreBlockEntity storageCore) {
+                // Always allow opening the GUI to insert drives and check status
+                NetworkHooks.openScreen(((ServerPlayer) player), storageCore, pos);
+                
+                // Show network status message
+                if (!state.getValue(FORMED)) {
+                    if (storageCore.getEnergyStorage().getEnergyStored() == 0) {
+                        player.displayClientMessage(Component.literal("Storage Core needs power!"), true);
+                    } else if (!storageCore.hasDrives()) {
+                        player.displayClientMessage(Component.literal("Insert storage drives to form network!"), true);
+                    }
                 }
             }
         }

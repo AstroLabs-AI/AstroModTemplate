@@ -67,10 +67,15 @@ The Storage Core requires TWO things to form a network:
 **Steps to Form Network:**
 1. Connect Storage Core to power source (Energy Conduit from generator)
 2. Wait for power to charge (check if block has energy)
-3. Right-click Storage Core - if you see "Storage network not formed!", you need power first
-4. Once powered, insert at least one Storage Drive
-5. The network will form automatically (block state changes)
-6. Now you can access the GUI properly
+3. Right-click Storage Core to open GUI (always accessible as of v0.4.4)
+4. Insert at least one Storage Drive in the drive slots
+5. The network will form automatically within 1 second
+6. The block appearance will change when network is formed
+
+**Status Messages (v0.4.4+):**
+- "Storage Core needs power!" - Connect to power source
+- "Insert storage drives to form network!" - Add at least one drive
+- No message - Network is formed and working!
 
 ### Step 4: Place Storage Terminal
 

@@ -1,5 +1,6 @@
 package com.astrolabs.astroexpansion.common.blockentities;
 
+import com.astrolabs.astroexpansion.AstroExpansion;
 import com.astrolabs.astroexpansion.api.storage.IStorageNetwork;
 import com.astrolabs.astroexpansion.common.blocks.StorageCoreBlock;
 import com.astrolabs.astroexpansion.common.capabilities.AstroEnergyStorage;
@@ -158,7 +159,15 @@ public class StorageCoreBlockEntity extends BlockEntity implements MenuProvider,
         boolean wasFormed = networkFormed;
         
         // Check if we have power and at least one drive
-        networkFormed = energyStorage.getEnergyStored() > 0 && hasDrives();
+        boolean hasPower = energyStorage.getEnergyStored() > 0;
+        boolean hasDriveInstalled = hasDrives();
+        networkFormed = hasPower && hasDriveInstalled;
+        
+        // Debug logging
+        if (!networkFormed && level.getGameTime() % 100 == 0) {
+            AstroExpansion.LOGGER.info("Storage Core at {} - Power: {} FE, Has Drives: {}, Network Formed: {}", 
+                worldPosition, energyStorage.getEnergyStored(), hasDriveInstalled, networkFormed);
+        }
         
         if (wasFormed != networkFormed) {
             updateBlockState();
@@ -168,13 +177,17 @@ public class StorageCoreBlockEntity extends BlockEntity implements MenuProvider,
         }
     }
     
-    private boolean hasDrives() {
+    public boolean hasDrives() {
         for (int i = 0; i < driveHandler.getSlots(); i++) {
             if (!driveHandler.getStackInSlot(i).isEmpty()) {
                 return true;
             }
         }
         return false;
+    }
+    
+    public AstroEnergyStorage getEnergyStorage() {
+        return energyStorage;
     }
     
     private void updateBlockState() {
