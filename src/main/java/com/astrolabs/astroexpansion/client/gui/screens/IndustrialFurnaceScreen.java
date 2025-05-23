@@ -64,8 +64,8 @@ public class IndustrialFurnaceScreen extends AbstractContainerScreen<IndustrialF
                 mouseX, mouseY);
         }
         
-        // Status tooltip
-        if (!menu.isFormed() && isHovering(30, 17, 144, 54, mouseX, mouseY)) {
+        // Status tooltip - show in center of screen with smaller hover area
+        if (!menu.isFormed() && isHovering(60, 40, 56, 16, mouseX, mouseY)) {
             guiGraphics.renderTooltip(this.font, 
                 Component.literal("Multiblock not formed!"), 
                 mouseX, mouseY);

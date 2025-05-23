@@ -18,7 +18,9 @@ public class BasicGeneratorScreen extends AbstractContainerScreen<BasicGenerator
     @Override
     protected void init() {
         super.init();
-        this.inventoryLabelY = this.imageHeight - 110;
+        // Standard inventory label position (avoid overlap)
+        this.inventoryLabelY = this.imageHeight - 94;
+        this.titleLabelY = 6;
     }
     
     @Override

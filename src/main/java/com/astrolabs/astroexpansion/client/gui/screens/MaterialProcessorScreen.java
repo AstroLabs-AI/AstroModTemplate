@@ -18,7 +18,9 @@ public class MaterialProcessorScreen extends AbstractContainerScreen<MaterialPro
     @Override
     protected void init() {
         super.init();
-        this.inventoryLabelY = this.imageHeight - 110;
+        // Standard label positions to avoid overlap
+        this.inventoryLabelY = this.imageHeight - 94;
+        this.titleLabelY = 6;
     }
     
     @Override

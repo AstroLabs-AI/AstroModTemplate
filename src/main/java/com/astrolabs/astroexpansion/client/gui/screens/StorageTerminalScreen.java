@@ -130,10 +130,10 @@ public class StorageTerminalScreen extends AbstractContainerScreen<StorageTermin
             Component storageText = Component.literal(String.format("Storage: %d / %d", stored, capacity));
             Component typesText = Component.literal(String.format("Types: %d", types));
             
-            guiGraphics.drawString(font, storageText, leftPos + 8, topPos + 95, 0x404040, false);
-            guiGraphics.drawString(font, typesText, leftPos + 100, topPos + 95, 0x404040, false);
+            guiGraphics.drawString(font, storageText, leftPos + 8, topPos + 200, 0x404040, false);
+            guiGraphics.drawString(font, typesText, leftPos + 8, topPos + 210, 0x404040, false);
         } else {
-            guiGraphics.drawString(font, "Network Offline", leftPos + 8, topPos + 95, 0xFF0000, false);
+            guiGraphics.drawString(font, "Network Offline", leftPos + 8, topPos + 200, 0xFF0000, false);
         }
     }
     
