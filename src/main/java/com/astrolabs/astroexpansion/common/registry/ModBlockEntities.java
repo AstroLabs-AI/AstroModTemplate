@@ -67,6 +67,21 @@ public class ModBlockEntities {
             () -> BlockEntityType.Builder.of(ComponentAssemblerBlockEntity::new,
                 ModBlocks.COMPONENT_ASSEMBLER.get()).build(null));
     
+    public static final RegistryObject<BlockEntityType<IndustrialFurnaceControllerBlockEntity>> INDUSTRIAL_FURNACE_CONTROLLER =
+        BLOCK_ENTITIES.register("industrial_furnace_controller",
+            () -> BlockEntityType.Builder.of(IndustrialFurnaceControllerBlockEntity::new,
+                ModBlocks.INDUSTRIAL_FURNACE_CONTROLLER.get()).build(null));
+    
+    public static final RegistryObject<BlockEntityType<FluidTankBlockEntity>> FLUID_TANK =
+        BLOCK_ENTITIES.register("fluid_tank",
+            () -> BlockEntityType.Builder.of(FluidTankBlockEntity::new,
+                ModBlocks.FLUID_TANK.get()).build(null));
+    
+    public static final RegistryObject<BlockEntityType<FluidPipeBlockEntity>> FLUID_PIPE =
+        BLOCK_ENTITIES.register("fluid_pipe",
+            () -> BlockEntityType.Builder.of(FluidPipeBlockEntity::new,
+                ModBlocks.FLUID_PIPE.get()).build(null));
+    
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);
     }

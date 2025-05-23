@@ -50,6 +50,18 @@
   "block.astroexpansion.import_bus": "Import Bus",
   "block.astroexpansion.export_bus": "Export Bus",
   
+  "block.astroexpansion.furnace_casing": "Furnace Casing",
+  "block.astroexpansion.industrial_furnace_controller": "Industrial Furnace Controller",
+  
+  "block.astroexpansion.fluid_tank": "Fluid Tank",
+  "block.astroexpansion.fluid_pipe": "Fluid Pipe",
+  
+  "fluid.astroexpansion.rocket_fuel": "Rocket Fuel",
+  "fluid.astroexpansion.liquid_oxygen": "Liquid Oxygen",
+  "fluid.astroexpansion.deuterium": "Deuterium",
+  "fluid.astroexpansion.tritium": "Tritium",
+  "fluid.astroexpansion.coolant": "Coolant",
+  
   "item.astroexpansion.mining_drone": "Mining Drone",
   "item.astroexpansion.construction_drone": "Construction Drone",
   "item.astroexpansion.farming_drone": "Farming Drone",

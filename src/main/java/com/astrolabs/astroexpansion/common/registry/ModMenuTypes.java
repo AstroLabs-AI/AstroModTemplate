@@ -39,6 +39,12 @@ public class ModMenuTypes {
     public static final RegistryObject<MenuType<ComponentAssemblerMenu>> COMPONENT_ASSEMBLER_MENU =
         registerMenuType(ComponentAssemblerMenu::new, "component_assembler_menu");
     
+    public static final RegistryObject<MenuType<IndustrialFurnaceMenu>> INDUSTRIAL_FURNACE =
+        registerMenuType(IndustrialFurnaceMenu::new, "industrial_furnace_menu");
+    
+    public static final RegistryObject<MenuType<FluidTankMenu>> FLUID_TANK =
+        registerMenuType(FluidTankMenu::new, "fluid_tank_menu");
+    
     private static <T extends AbstractContainerMenu> RegistryObject<MenuType<T>> registerMenuType(IContainerFactory<T> factory, String name) {
         return MENUS.register(name, () -> IForgeMenuType.create(factory));
     }

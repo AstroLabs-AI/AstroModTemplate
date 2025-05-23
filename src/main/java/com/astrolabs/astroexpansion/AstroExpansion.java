@@ -32,6 +32,7 @@ public class AstroExpansion {
         ModCreativeTabs.CREATIVE_MODE_TABS.register(modEventBus);
         ModSounds.SOUNDS.register(modEventBus);
         ModEntities.ENTITY_TYPES.register(modEventBus);
+        ModFluids.register(modEventBus);
         
         // Register mod event listeners
         modEventBus.addListener(this::commonSetup);

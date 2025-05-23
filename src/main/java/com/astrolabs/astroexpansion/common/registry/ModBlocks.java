@@ -168,6 +168,20 @@ public class ModBlocks {
             .sound(SoundType.METAL)
             .noOcclusion()));
     
+    // Multiblock Components
+    public static final RegistryObject<Block> FURNACE_CASING = registerBlock("furnace_casing",
+        () -> new FurnaceCasingBlock());
+    
+    public static final RegistryObject<Block> INDUSTRIAL_FURNACE_CONTROLLER = registerBlock("industrial_furnace_controller",
+        () -> new IndustrialFurnaceControllerBlock());
+    
+    // Fluid System
+    public static final RegistryObject<Block> FLUID_TANK = registerBlock("fluid_tank",
+        () -> new FluidTankBlock());
+    
+    public static final RegistryObject<Block> FLUID_PIPE = registerBlock("fluid_pipe",
+        () -> new FluidPipeBlock());
+    
     // Register block with item
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
