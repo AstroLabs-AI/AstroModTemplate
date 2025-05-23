@@ -44,6 +44,10 @@ public class ModItems {
         () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> ENERGY_CORE = ITEMS.register("energy_core",
         () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ADVANCED_PROCESSOR = ITEMS.register("advanced_processor",
+        () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> TITANIUM_PLATE = ITEMS.register("titanium_plate",
+        () -> new Item(new Item.Properties()));
     
     // Misc
     public static final RegistryObject<Item> WRENCH = ITEMS.register("wrench",
@@ -78,6 +82,13 @@ public class ModItems {
     public static final RegistryObject<Item> DRONE_CORE = ITEMS.register("drone_core",
         () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> DRONE_SHELL = ITEMS.register("drone_shell",
+        () -> new Item(new Item.Properties()));
+    
+    // Fusion Reactor Components
+    public static final RegistryObject<Item> FUSION_CORE = ITEMS.register("fusion_core",
+        () -> new Item(new Item.Properties()));
+    
+    public static final RegistryObject<Item> PLASMA_INJECTOR = ITEMS.register("plasma_injector",
         () -> new Item(new Item.Properties()));
     
     public static void register(IEventBus eventBus) {

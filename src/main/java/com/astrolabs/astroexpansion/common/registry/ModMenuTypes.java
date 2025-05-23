@@ -42,6 +42,9 @@ public class ModMenuTypes {
     public static final RegistryObject<MenuType<IndustrialFurnaceMenu>> INDUSTRIAL_FURNACE =
         registerMenuType(IndustrialFurnaceMenu::new, "industrial_furnace_menu");
     
+    public static final RegistryObject<MenuType<FusionReactorMenu>> FUSION_REACTOR =
+        registerMenuType(FusionReactorMenu::new, "fusion_reactor_menu");
+    
     public static final RegistryObject<MenuType<FluidTankMenu>> FLUID_TANK =
         registerMenuType(FluidTankMenu::new, "fluid_tank_menu");
     

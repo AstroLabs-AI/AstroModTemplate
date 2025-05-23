@@ -4,6 +4,7 @@ import com.astrolabs.astroexpansion.AstroExpansion;
 import com.astrolabs.astroexpansion.client.gui.screens.ComponentAssemblerScreen;
 import com.astrolabs.astroexpansion.client.gui.screens.DroneDockScreen;
 import com.astrolabs.astroexpansion.client.gui.screens.FluidTankScreen;
+import com.astrolabs.astroexpansion.client.gui.screens.FusionReactorScreen;
 import com.astrolabs.astroexpansion.client.gui.screens.IndustrialFurnaceScreen;
 import com.astrolabs.astroexpansion.client.gui.screens.StorageCoreScreen;
 import com.astrolabs.astroexpansion.client.gui.screens.StorageTerminalScreen;
@@ -29,6 +30,7 @@ public class ClientEvents {
             MenuScreens.register(ModMenuTypes.COMPONENT_ASSEMBLER_MENU.get(), ComponentAssemblerScreen::new);
             MenuScreens.register(ModMenuTypes.DRONE_DOCK_MENU.get(), DroneDockScreen::new);
             MenuScreens.register(ModMenuTypes.INDUSTRIAL_FURNACE.get(), IndustrialFurnaceScreen::new);
+            MenuScreens.register(ModMenuTypes.FUSION_REACTOR.get(), FusionReactorScreen::new);
             MenuScreens.register(ModMenuTypes.FLUID_TANK.get(), FluidTankScreen::new);
         });
     }

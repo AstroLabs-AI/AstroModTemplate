@@ -16,6 +16,8 @@
   "item.astroexpansion.circuit_board": "Circuit Board",
   "item.astroexpansion.processor": "Processor",
   "item.astroexpansion.energy_core": "Energy Core",
+  "item.astroexpansion.advanced_processor": "Advanced Processor",
+  "item.astroexpansion.titanium_plate": "Titanium Plate",
   "item.astroexpansion.wrench": "Wrench",
   
   "block.astroexpansion.titanium_ore": "Titanium Ore",
@@ -53,6 +55,9 @@
   "block.astroexpansion.furnace_casing": "Furnace Casing",
   "block.astroexpansion.industrial_furnace_controller": "Industrial Furnace Controller",
   
+  "block.astroexpansion.fusion_reactor_casing": "Fusion Reactor Casing",
+  "block.astroexpansion.fusion_reactor_controller": "Fusion Reactor Controller",
+  
   "block.astroexpansion.fluid_tank": "Fluid Tank",
   "block.astroexpansion.fluid_pipe": "Fluid Pipe",
   
@@ -69,6 +74,9 @@
   "item.astroexpansion.logistics_drone": "Logistics Drone",
   "item.astroexpansion.drone_core": "Drone Core",
   "item.astroexpansion.drone_shell": "Drone Shell",
+  
+  "item.astroexpansion.fusion_core": "Fusion Core",
+  "item.astroexpansion.plasma_injector": "Plasma Injector",
   
   "entity.astroexpansion.mining_drone": "Mining Drone",
   "entity.astroexpansion.construction_drone": "Construction Drone",

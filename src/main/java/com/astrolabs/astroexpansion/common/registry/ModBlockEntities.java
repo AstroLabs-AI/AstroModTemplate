@@ -72,6 +72,11 @@ public class ModBlockEntities {
             () -> BlockEntityType.Builder.of(IndustrialFurnaceControllerBlockEntity::new,
                 ModBlocks.INDUSTRIAL_FURNACE_CONTROLLER.get()).build(null));
     
+    public static final RegistryObject<BlockEntityType<FusionReactorControllerBlockEntity>> FUSION_REACTOR_CONTROLLER =
+        BLOCK_ENTITIES.register("fusion_reactor_controller",
+            () -> BlockEntityType.Builder.of(FusionReactorControllerBlockEntity::new,
+                ModBlocks.FUSION_REACTOR_CONTROLLER.get()).build(null));
+    
     public static final RegistryObject<BlockEntityType<FluidTankBlockEntity>> FLUID_TANK =
         BLOCK_ENTITIES.register("fluid_tank",
             () -> BlockEntityType.Builder.of(FluidTankBlockEntity::new,
