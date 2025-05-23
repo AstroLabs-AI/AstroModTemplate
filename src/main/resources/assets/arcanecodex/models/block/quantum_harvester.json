@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_bottom_top",
+  "textures": {
+    "top": "arcanecodex:block/quantum_harvester_top",
+    "bottom": "arcanecodex:block/machine_bottom",
+    "side": "arcanecodex:block/quantum_harvester_side"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "itemGroup.arcanecodex": "Arcane Codex",
+  "creativetab.arcanecodex": "Arcane Codex",
+  
+  "block.arcanecodex.quantum_harvester": "Quantum Harvester",
+  "block.arcanecodex.neural_interface": "Neural Interface",
+  "block.arcanecodex.quantum_conduit": "Quantum Conduit",
+  "block.arcanecodex.augmentation_table": "Augmentation Table",
+  
+  "item.arcanecodex.quantum_scanner": "Quantum Scanner",
+  "item.arcanecodex.quantum_scanner.tooltip": "Scans quantum energy signatures",
+  "item.arcanecodex.memory_fragment": "Memory Fragment",
+  "item.arcanecodex.nano_multitool": "Nano-Multitool",
+  "item.arcanecodex.quantum_core": "Quantum Core",
+  "item.arcanecodex.neural_matrix": "Neural Matrix",
+  "item.arcanecodex.cortex_processor": "Cortex Processor",
+  "item.arcanecodex.optic_enhancer": "Optic Enhancer",
+  
+  "gui.arcanecodex.energy_type.coherent_light": "Coherent Light",
+  "gui.arcanecodex.energy_type.quantum_foam": "Quantum Foam",
+  "gui.arcanecodex.energy_type.neural_charge": "Neural Charge",
+  "gui.arcanecodex.energy_type.temporal_flux": "Temporal Flux",
+  "gui.arcanecodex.energy_type.dark_current": "Dark Current",
+  "gui.arcanecodex.energy_type.synthesis_wave": "Synthesis Wave"
+}

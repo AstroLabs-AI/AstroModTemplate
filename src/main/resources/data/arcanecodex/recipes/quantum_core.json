@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "RER",
+    "EDE",
+    "RER"
+  ],
+  "key": {
+    "R": {
+      "item": "minecraft:redstone"
+    },
+    "E": {
+      "item": "minecraft:ender_pearl"
+    },
+    "D": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "result": {
+    "item": "arcanecodex:quantum_core",
+    "count": 1
+  }
+}

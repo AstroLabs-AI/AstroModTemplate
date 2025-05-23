@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "active=false": {
+      "model": "arcanecodex:block/quantum_harvester"
+    },
+    "active=true": {
+      "model": "arcanecodex:block/quantum_harvester_active"
+    }
+  }
+}

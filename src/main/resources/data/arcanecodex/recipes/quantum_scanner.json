@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " GE",
+    "IIG",
+    "II "
+  ],
+  "key": {
+    "G": {
+      "item": "minecraft:glass"
+    },
+    "E": {
+      "item": "minecraft:ender_pearl"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "result": {
+    "item": "arcanecodex:quantum_scanner",
+    "count": 1
+  }
+}
