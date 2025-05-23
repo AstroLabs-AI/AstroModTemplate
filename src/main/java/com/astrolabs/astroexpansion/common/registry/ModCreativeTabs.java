@@ -50,6 +50,8 @@ public class ModCreativeTabs {
                 output.accept(ModItems.CIRCUIT_BOARD.get());
                 output.accept(ModItems.PROCESSOR.get());
                 output.accept(ModItems.ENERGY_CORE.get());
+                output.accept(ModItems.ADVANCED_PROCESSOR.get());
+                output.accept(ModItems.TITANIUM_PLATE.get());
                 
                 // Machines
                 output.accept(ModBlocks.BASIC_GENERATOR.get());
@@ -68,9 +70,32 @@ public class ModCreativeTabs {
                 output.accept(ModItems.STORAGE_HOUSING.get());
                 output.accept(ModItems.STORAGE_PROCESSOR.get());
                 
+                // Automation
+                output.accept(ModBlocks.IMPORT_BUS.get());
+                output.accept(ModBlocks.EXPORT_BUS.get());
+                output.accept(ModBlocks.COMPONENT_ASSEMBLER.get());
+                
+                // Multiblocks
+                output.accept(ModBlocks.INDUSTRIAL_FURNACE_CONTROLLER.get());
+                output.accept(ModBlocks.FURNACE_CASING.get());
+                output.accept(ModBlocks.FUSION_REACTOR_CONTROLLER.get());
+                output.accept(ModBlocks.FUSION_REACTOR_CASING.get());
+                
+                // Fluid System
+                output.accept(ModBlocks.FLUID_TANK.get());
+                output.accept(ModBlocks.FLUID_PIPE.get());
+                
+                // Fusion Components
+                output.accept(ModItems.FUSION_CORE.get());
+                output.accept(ModItems.PLASMA_INJECTOR.get());
+                
                 // Drones
                 output.accept(ModBlocks.DRONE_DOCK.get());
                 output.accept(ModItems.MINING_DRONE.get());
+                output.accept(ModItems.CONSTRUCTION_DRONE.get());
+                output.accept(ModItems.FARMING_DRONE.get());
+                output.accept(ModItems.COMBAT_DRONE.get());
+                output.accept(ModItems.LOGISTICS_DRONE.get());
                 output.accept(ModItems.DRONE_CORE.get());
                 output.accept(ModItems.DRONE_SHELL.get());
                 
