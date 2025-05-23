@@ -33,6 +33,7 @@ public class AstroExpansion {
         ModSounds.SOUNDS.register(modEventBus);
         ModEntities.ENTITY_TYPES.register(modEventBus);
         ModFluids.register(modEventBus);
+        ModChunkGenerators.register(modEventBus);
         
         // Register mod event listeners
         modEventBus.addListener(this::commonSetup);

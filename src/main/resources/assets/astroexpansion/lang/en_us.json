@@ -136,6 +136,10 @@
   "item.astroexpansion.helium3_crystal": "Helium-3 Crystal",
   "item.astroexpansion.moon_dust": "Moon Dust",
   
+  "block.astroexpansion.space_teleporter": "Space Teleporter",
+  "block.astroexpansion.moon_teleporter": "Moon Teleporter",
+  "block.astroexpansion.earth_teleporter": "Earth Teleporter",
+  
   "astroexpansion.energy": "%s FE",
   "astroexpansion.energy.stored": "Energy: %s / %s FE",
   "astroexpansion.progress": "Progress: %s%%",

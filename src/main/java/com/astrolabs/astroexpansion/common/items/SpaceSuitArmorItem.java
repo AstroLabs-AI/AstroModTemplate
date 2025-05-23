@@ -38,7 +38,7 @@ public class SpaceSuitArmorItem extends ArmorItem {
         }
     }
     
-    private boolean hasFullSuit(Player player) {
+    public static boolean hasFullSuit(Player player) {
         return player.getItemBySlot(EquipmentSlot.HEAD).getItem() == ModItems.SPACE_HELMET.get() &&
                player.getItemBySlot(EquipmentSlot.CHEST).getItem() == ModItems.SPACE_CHESTPLATE.get() &&
                player.getItemBySlot(EquipmentSlot.LEGS).getItem() == ModItems.SPACE_LEGGINGS.get() &&

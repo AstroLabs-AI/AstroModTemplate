@@ -5,6 +5,7 @@ import com.astrolabs.astroexpansion.common.blocks.*;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DropExperienceBlock;
@@ -269,6 +270,16 @@ public class ModBlocks {
             .strength(4.0F, 3.0F)
             .requiresCorrectToolForDrops(),
             UniformInt.of(5, 9)));
+    
+    // Teleporters
+    public static final RegistryObject<Block> SPACE_TELEPORTER = registerBlock("space_teleporter",
+        () -> new TeleporterBlock(ModDimensions.SPACE_KEY, "Space"));
+    
+    public static final RegistryObject<Block> MOON_TELEPORTER = registerBlock("moon_teleporter",
+        () -> new TeleporterBlock(ModDimensions.MOON_KEY, "Moon"));
+    
+    public static final RegistryObject<Block> EARTH_TELEPORTER = registerBlock("earth_teleporter",
+        () -> new TeleporterBlock(Level.OVERWORLD, "Earth"));
     
     // Fluid System
     public static final RegistryObject<Block> FLUID_TANK = registerBlock("fluid_tank",
