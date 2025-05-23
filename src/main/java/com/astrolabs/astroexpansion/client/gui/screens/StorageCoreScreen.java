@@ -16,6 +16,7 @@ public class StorageCoreScreen extends AbstractContainerScreen<StorageCoreMenu> 
     
     public StorageCoreScreen(StorageCoreMenu menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title);
+        this.imageHeight = 176; // Standard chest-like GUI height
     }
     
     @Override

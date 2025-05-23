@@ -201,9 +201,17 @@ public class StorageTerminalScreen extends AbstractContainerScreen<StorageTermin
     
     @Override
     public boolean keyPressed(int keyCode, int scanCode, int modifiers) {
-        if (this.searchBox.keyPressed(keyCode, scanCode, modifiers) || this.searchBox.canConsumeInput()) {
+        // Allow ESC to close the GUI
+        if (keyCode == 256) { // ESC key
+            this.minecraft.player.closeContainer();
             return true;
         }
+        
+        // Handle search box input
+        if (this.searchBox.isFocused() && this.searchBox.keyPressed(keyCode, scanCode, modifiers)) {
+            return true;
+        }
+        
         return super.keyPressed(keyCode, scanCode, modifiers);
     }
 }

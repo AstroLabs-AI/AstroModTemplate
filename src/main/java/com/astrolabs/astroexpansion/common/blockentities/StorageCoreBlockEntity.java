@@ -190,6 +190,10 @@ public class StorageCoreBlockEntity extends BlockEntity implements MenuProvider,
         return energyStorage;
     }
     
+    public ItemStackHandler getDriveHandler() {
+        return driveHandler;
+    }
+    
     private void updateBlockState() {
         BlockState state = getBlockState();
         if (state.getValue(StorageCoreBlock.FORMED) != networkFormed) {
@@ -323,9 +327,5 @@ public class StorageCoreBlockEntity extends BlockEntity implements MenuProvider,
     
     public boolean isNetworkFormed() {
         return networkFormed;
-    }
-    
-    public ItemStackHandler getDriveHandler() {
-        return driveHandler;
     }
 }
