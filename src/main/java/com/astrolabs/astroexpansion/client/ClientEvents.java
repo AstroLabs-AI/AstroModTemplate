@@ -30,6 +30,7 @@ public class ClientEvents {
             MenuScreens.register(ModMenuTypes.INDUSTRIAL_FURNACE.get(), IndustrialFurnaceScreen::new);
             MenuScreens.register(ModMenuTypes.FUSION_REACTOR.get(), FusionReactorScreen::new);
             MenuScreens.register(ModMenuTypes.FLUID_TANK.get(), FluidTankScreen::new);
+            MenuScreens.register(ModMenuTypes.QUANTUM_COMPUTER.get(), QuantumComputerScreen::new);
         });
     }
     

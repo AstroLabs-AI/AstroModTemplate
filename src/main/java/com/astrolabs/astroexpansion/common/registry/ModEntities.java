@@ -3,6 +3,7 @@ package com.astrolabs.astroexpansion.common.registry;
 import com.astrolabs.astroexpansion.AstroExpansion;
 import com.astrolabs.astroexpansion.common.entities.drones.MiningDroneEntity;
 import com.astrolabs.astroexpansion.common.entities.*;
+import com.astrolabs.astroexpansion.common.entities.vehicles.LunarRoverEntity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -49,6 +50,13 @@ public class ModEntities {
                 .sized(0.6F, 0.6F)
                 .clientTrackingRange(8)
                 .build(new ResourceLocation(AstroExpansion.MODID, "logistics_drone").toString()));
+    
+    public static final RegistryObject<EntityType<LunarRoverEntity>> LUNAR_ROVER =
+        ENTITY_TYPES.register("lunar_rover",
+            () -> EntityType.Builder.<LunarRoverEntity>of(LunarRoverEntity::new, MobCategory.MISC)
+                .sized(2.0F, 1.5F)
+                .clientTrackingRange(10)
+                .build(new ResourceLocation(AstroExpansion.MODID, "lunar_rover").toString()));
     
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);

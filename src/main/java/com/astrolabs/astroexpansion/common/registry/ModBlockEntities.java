@@ -77,6 +77,26 @@ public class ModBlockEntities {
             () -> BlockEntityType.Builder.of(FusionReactorControllerBlockEntity::new,
                 ModBlocks.FUSION_REACTOR_CONTROLLER.get()).build(null));
     
+    public static final RegistryObject<BlockEntityType<QuantumComputerControllerBlockEntity>> QUANTUM_COMPUTER_CONTROLLER =
+        BLOCK_ENTITIES.register("quantum_computer_controller",
+            () -> BlockEntityType.Builder.of(QuantumComputerControllerBlockEntity::new,
+                ModBlocks.QUANTUM_COMPUTER_CONTROLLER.get()).build(null));
+    
+    public static final RegistryObject<BlockEntityType<ResearchTerminalBlockEntity>> RESEARCH_TERMINAL =
+        BLOCK_ENTITIES.register("research_terminal",
+            () -> BlockEntityType.Builder.of(ResearchTerminalBlockEntity::new,
+                ModBlocks.RESEARCH_TERMINAL.get()).build(null));
+    
+    public static final RegistryObject<BlockEntityType<FuelRefineryControllerBlockEntity>> FUEL_REFINERY_CONTROLLER =
+        BLOCK_ENTITIES.register("fuel_refinery_controller",
+            () -> BlockEntityType.Builder.of(FuelRefineryControllerBlockEntity::new,
+                ModBlocks.FUEL_REFINERY_CONTROLLER.get()).build(null));
+    
+    public static final RegistryObject<BlockEntityType<RocketAssemblyControllerBlockEntity>> ROCKET_ASSEMBLY_CONTROLLER =
+        BLOCK_ENTITIES.register("rocket_assembly_controller",
+            () -> BlockEntityType.Builder.of(RocketAssemblyControllerBlockEntity::new,
+                ModBlocks.ROCKET_ASSEMBLY_CONTROLLER.get()).build(null));
+    
     public static final RegistryObject<BlockEntityType<FluidTankBlockEntity>> FLUID_TANK =
         BLOCK_ENTITIES.register("fluid_tank",
             () -> BlockEntityType.Builder.of(FluidTankBlockEntity::new,
@@ -86,6 +106,21 @@ public class ModBlockEntities {
         BLOCK_ENTITIES.register("fluid_pipe",
             () -> BlockEntityType.Builder.of(FluidPipeBlockEntity::new,
                 ModBlocks.FLUID_PIPE.get()).build(null));
+    
+    public static final RegistryObject<BlockEntityType<SolarPanelBlockEntity>> SOLAR_PANEL =
+        BLOCK_ENTITIES.register("solar_panel",
+            () -> BlockEntityType.Builder.of(SolarPanelBlockEntity::new,
+                ModBlocks.SOLAR_PANEL.get()).build(null));
+    
+    public static final RegistryObject<BlockEntityType<OxygenGeneratorBlockEntity>> OXYGEN_GENERATOR =
+        BLOCK_ENTITIES.register("oxygen_generator",
+            () -> BlockEntityType.Builder.of(OxygenGeneratorBlockEntity::new,
+                ModBlocks.OXYGEN_GENERATOR.get()).build(null));
+    
+    public static final RegistryObject<BlockEntityType<LifeSupportSystemBlockEntity>> LIFE_SUPPORT_SYSTEM =
+        BLOCK_ENTITIES.register("life_support_system",
+            () -> BlockEntityType.Builder.of(LifeSupportSystemBlockEntity::new,
+                ModBlocks.LIFE_SUPPORT_SYSTEM.get()).build(null));
     
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);

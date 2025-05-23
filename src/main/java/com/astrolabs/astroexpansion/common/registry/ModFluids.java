@@ -91,6 +91,20 @@ public class ModFluids {
     public static final RegistryObject<ForgeFlowingFluid.Flowing> COOLANT_FLOWING = FLUIDS.register("coolant_flowing",
         () -> new ForgeFlowingFluid.Flowing(makeFluidProperties("coolant", COOLANT_TYPE)));
     
+    // Crude Oil
+    public static final RegistryObject<FluidType> CRUDE_OIL_TYPE = FLUID_TYPES.register("crude_oil",
+        () -> new FluidType(FluidType.Properties.create()
+            .density(900)
+            .viscosity(3000)
+            .temperature(300)
+    ));
+    
+    public static final RegistryObject<ForgeFlowingFluid.Source> CRUDE_OIL = FLUIDS.register("crude_oil",
+        () -> new ForgeFlowingFluid.Source(makeFluidProperties("crude_oil", CRUDE_OIL_TYPE)));
+    
+    public static final RegistryObject<ForgeFlowingFluid.Flowing> CRUDE_OIL_FLOWING = FLUIDS.register("crude_oil_flowing",
+        () -> new ForgeFlowingFluid.Flowing(makeFluidProperties("crude_oil", CRUDE_OIL_TYPE)));
+    
     private static ForgeFlowingFluid.Properties makeFluidProperties(String name, RegistryObject<FluidType> type) {
         return new ForgeFlowingFluid.Properties(type, 
             () -> FLUIDS.getEntries().stream()

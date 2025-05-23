@@ -48,6 +48,18 @@ public class ModMenuTypes {
     public static final RegistryObject<MenuType<FluidTankMenu>> FLUID_TANK =
         registerMenuType(FluidTankMenu::new, "fluid_tank_menu");
     
+    public static final RegistryObject<MenuType<QuantumComputerMenu>> QUANTUM_COMPUTER =
+        registerMenuType(QuantumComputerMenu::new, "quantum_computer_menu");
+    
+    public static final RegistryObject<MenuType<ResearchTerminalMenu>> RESEARCH_TERMINAL =
+        registerMenuType(ResearchTerminalMenu::new, "research_terminal_menu");
+    
+    public static final RegistryObject<MenuType<FuelRefineryMenu>> FUEL_REFINERY =
+        registerMenuType(FuelRefineryMenu::new, "fuel_refinery_menu");
+    
+    public static final RegistryObject<MenuType<RocketAssemblyMenu>> ROCKET_ASSEMBLY =
+        registerMenuType(RocketAssemblyMenu::new, "rocket_assembly_menu");
+    
     private static <T extends AbstractContainerMenu> RegistryObject<MenuType<T>> registerMenuType(IContainerFactory<T> factory, String name) {
         return MENUS.register(name, () -> IForgeMenuType.create(factory));
     }

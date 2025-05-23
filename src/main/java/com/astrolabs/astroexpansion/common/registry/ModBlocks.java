@@ -182,6 +182,94 @@ public class ModBlocks {
     public static final RegistryObject<Block> FUSION_REACTOR_CONTROLLER = registerBlock("fusion_reactor_controller",
         () -> new FusionReactorControllerBlock());
     
+    public static final RegistryObject<Block> FUSION_COIL = registerBlock("fusion_coil",
+        () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+    
+    public static final RegistryObject<Block> FUSION_CORE = registerBlock("fusion_core",
+        () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).lightLevel(state -> 15)));
+    
+    // Quantum Computer
+    public static final RegistryObject<Block> QUANTUM_COMPUTER_CONTROLLER = registerBlock("quantum_computer_controller",
+        () -> new QuantumComputerControllerBlock());
+    
+    public static final RegistryObject<Block> QUANTUM_CASING = registerBlock("quantum_casing",
+        () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+    
+    public static final RegistryObject<Block> QUANTUM_PROCESSOR = registerBlock("quantum_processor",
+        () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).lightLevel(state -> 7)));
+    
+    public static final RegistryObject<Block> QUANTUM_CORE = registerBlock("quantum_core",
+        () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).lightLevel(state -> 12)));
+    
+    // Research System
+    public static final RegistryObject<Block> RESEARCH_TERMINAL = registerBlock("research_terminal",
+        () -> new ResearchTerminalBlock());
+    
+    // Fuel Refinery
+    public static final RegistryObject<Block> FUEL_REFINERY_CONTROLLER = registerBlock("fuel_refinery_controller",
+        () -> new FuelRefineryControllerBlock());
+    
+    public static final RegistryObject<Block> REFINERY_CASING = registerBlock("refinery_casing",
+        () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+    
+    public static final RegistryObject<Block> DISTILLATION_COLUMN = registerBlock("distillation_column",
+        () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
+    
+    // Rocket Assembly
+    public static final RegistryObject<Block> ROCKET_ASSEMBLY_CONTROLLER = registerBlock("rocket_assembly_controller",
+        () -> new RocketAssemblyControllerBlock());
+    
+    public static final RegistryObject<Block> LAUNCH_PAD = registerBlock("launch_pad",
+        () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(50.0F, 1200.0F)));
+    
+    public static final RegistryObject<Block> ASSEMBLY_FRAME = registerBlock("assembly_frame",
+        () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
+    
+    // Rocket Parts
+    public static final RegistryObject<Block> ROCKET_ENGINE = registerBlock("rocket_engine",
+        () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+    
+    public static final RegistryObject<Block> ROCKET_FUEL_TANK = registerBlock("rocket_fuel_tank",
+        () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+    
+    public static final RegistryObject<Block> ROCKET_HULL = registerBlock("rocket_hull",
+        () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+    
+    public static final RegistryObject<Block> ROCKET_NOSE_CONE = registerBlock("rocket_nose_cone",
+        () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+    
+    // Space Station
+    public static final RegistryObject<Block> STATION_HULL = registerBlock("station_hull",
+        () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(30.0F, 600.0F)));
+    
+    public static final RegistryObject<Block> STATION_GLASS = registerBlock("station_glass",
+        () -> new Block(BlockBehaviour.Properties.copy(Blocks.GLASS).strength(10.0F, 300.0F).noOcclusion()));
+    
+    public static final RegistryObject<Block> SOLAR_PANEL = registerBlock("solar_panel",
+        () -> new SolarPanelBlock());
+    
+    public static final RegistryObject<Block> DOCKING_PORT = registerBlock("docking_port",
+        () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(20.0F, 400.0F)));
+    
+    public static final RegistryObject<Block> OXYGEN_GENERATOR = registerBlock("oxygen_generator",
+        () -> new OxygenGeneratorBlock());
+    
+    public static final RegistryObject<Block> LIFE_SUPPORT_SYSTEM = registerBlock("life_support_system",
+        () -> new LifeSupportSystemBlock());
+    
+    // Lunar Blocks
+    public static final RegistryObject<Block> MOON_STONE = registerBlock("moon_stone",
+        () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).strength(2.0F, 6.0F)));
+    
+    public static final RegistryObject<Block> MOON_DUST = registerBlock("moon_dust",
+        () -> new Block(BlockBehaviour.Properties.copy(Blocks.SAND).strength(0.5F)));
+    
+    public static final RegistryObject<Block> HELIUM3_ORE = registerBlock("helium3_ore",
+        () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DIAMOND_ORE)
+            .strength(4.0F, 3.0F)
+            .requiresCorrectToolForDrops(),
+            UniformInt.of(5, 9)));
+    
     // Fluid System
     public static final RegistryObject<Block> FLUID_TANK = registerBlock("fluid_tank",
         () -> new FluidTankBlock());

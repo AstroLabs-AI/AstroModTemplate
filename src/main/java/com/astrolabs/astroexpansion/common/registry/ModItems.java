@@ -2,7 +2,10 @@ package com.astrolabs.astroexpansion.common.registry;
 
 import com.astrolabs.astroexpansion.AstroExpansion;
 import com.astrolabs.astroexpansion.common.items.DroneItem;
+import com.astrolabs.astroexpansion.common.items.LunarRoverItem;
+import com.astrolabs.astroexpansion.common.items.SpaceSuitArmorItem;
 import com.astrolabs.astroexpansion.common.items.StorageDriveItem;
+import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -89,6 +92,63 @@ public class ModItems {
         () -> new Item(new Item.Properties()));
     
     public static final RegistryObject<Item> PLASMA_INJECTOR = ITEMS.register("plasma_injector",
+        () -> new Item(new Item.Properties()));
+    
+    // Fusion Fuels
+    public static final RegistryObject<Item> DEUTERIUM_CELL = ITEMS.register("deuterium_cell",
+        () -> new Item(new Item.Properties()));
+    
+    public static final RegistryObject<Item> TRITIUM_CELL = ITEMS.register("tritium_cell",
+        () -> new Item(new Item.Properties()));
+    
+    public static final RegistryObject<Item> EMPTY_FUEL_CELL = ITEMS.register("empty_fuel_cell",
+        () -> new Item(new Item.Properties()));
+    
+    // Research Items
+    public static final RegistryObject<Item> RESEARCH_DATA_BASIC = ITEMS.register("research_data_basic",
+        () -> new Item(new Item.Properties()));
+    
+    public static final RegistryObject<Item> RESEARCH_DATA_ADVANCED = ITEMS.register("research_data_advanced",
+        () -> new Item(new Item.Properties()));
+    
+    public static final RegistryObject<Item> RESEARCH_DATA_QUANTUM = ITEMS.register("research_data_quantum",
+        () -> new Item(new Item.Properties()));
+    
+    public static final RegistryObject<Item> RESEARCH_DATA_FUSION = ITEMS.register("research_data_fusion",
+        () -> new Item(new Item.Properties()));
+    
+    public static final RegistryObject<Item> RESEARCH_DATA_SPACE = ITEMS.register("research_data_space",
+        () -> new Item(new Item.Properties()));
+    
+    // Space Suit Armor
+    public static final RegistryObject<Item> SPACE_HELMET = ITEMS.register("space_helmet",
+        () -> new SpaceSuitArmorItem(ArmorItem.Type.HELMET, new Item.Properties()));
+    
+    public static final RegistryObject<Item> SPACE_CHESTPLATE = ITEMS.register("space_chestplate",
+        () -> new SpaceSuitArmorItem(ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+    
+    public static final RegistryObject<Item> SPACE_LEGGINGS = ITEMS.register("space_leggings",
+        () -> new SpaceSuitArmorItem(ArmorItem.Type.LEGGINGS, new Item.Properties()));
+    
+    public static final RegistryObject<Item> SPACE_BOOTS = ITEMS.register("space_boots",
+        () -> new SpaceSuitArmorItem(ArmorItem.Type.BOOTS, new Item.Properties()));
+    
+    // Oxygen System
+    public static final RegistryObject<Item> OXYGEN_TANK = ITEMS.register("oxygen_tank",
+        () -> new Item(new Item.Properties().stacksTo(1)));
+    
+    public static final RegistryObject<Item> OXYGEN_CANISTER = ITEMS.register("oxygen_canister",
+        () -> new Item(new Item.Properties().stacksTo(16)));
+    
+    // Vehicles
+    public static final RegistryObject<Item> LUNAR_ROVER = ITEMS.register("lunar_rover",
+        () -> new LunarRoverItem());
+    
+    // Lunar Resources
+    public static final RegistryObject<Item> HELIUM3_CRYSTAL = ITEMS.register("helium3_crystal",
+        () -> new Item(new Item.Properties()));
+    
+    public static final RegistryObject<Item> MOON_DUST = ITEMS.register("moon_dust",
         () -> new Item(new Item.Properties()));
     
     public static void register(IEventBus eventBus) {
