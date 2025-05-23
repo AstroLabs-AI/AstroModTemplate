@@ -112,7 +112,7 @@ public class ModBlocks {
             .sound(SoundType.METAL)
             .noOcclusion()));
     
-    public static final RegistryObject<Block> ENERGY_CONDUIT = BLOCKS.register("energy_conduit",
+    public static final RegistryObject<Block> ENERGY_CONDUIT = registerBlock("energy_conduit",
         () -> new EnergyConduitBlock(BlockBehaviour.Properties.of()
             .mapColor(MapColor.METAL)
             .strength(2.0F)
