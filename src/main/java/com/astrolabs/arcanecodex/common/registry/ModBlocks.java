@@ -4,6 +4,7 @@ import com.astrolabs.arcanecodex.ArcaneCodex;
 import com.astrolabs.arcanecodex.common.blocks.QuantumConduitBlock;
 import com.astrolabs.arcanecodex.common.blocks.machines.NeuralInterfaceBlock;
 import com.astrolabs.arcanecodex.common.blocks.machines.QuantumHarvesterBlock;
+import com.astrolabs.arcanecodex.common.blocks.machines.RealityCompilerBlock;
 import com.astrolabs.arcanecodex.common.blocks.multiblocks.AugmentationTableBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -40,6 +41,12 @@ public class ModBlocks {
             .strength(4.0f, 5.0f)
             .requiresCorrectToolForDrops()
             .lightLevel(state -> state.getValue(AugmentationTableBlock.MULTIBLOCK_FORMED) ? 10 : 5)));
+    
+    public static final RegistryObject<Block> REALITY_COMPILER = BLOCKS.register("reality_compiler",
+        () -> new RealityCompilerBlock(BlockBehaviour.Properties.of(Material.METAL)
+            .strength(5.0f, 6.0f)
+            .requiresCorrectToolForDrops()
+            .lightLevel(state -> state.getValue(RealityCompilerBlock.EXECUTING) ? 15 : 7)));
     
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);

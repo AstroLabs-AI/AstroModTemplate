@@ -6,6 +6,7 @@
   "block.arcanecodex.neural_interface": "Neural Interface",
   "block.arcanecodex.quantum_conduit": "Quantum Conduit",
   "block.arcanecodex.augmentation_table": "Augmentation Table",
+  "block.arcanecodex.reality_compiler": "Reality Compiler",
   
   "item.arcanecodex.quantum_scanner": "Quantum Scanner",
   "item.arcanecodex.quantum_scanner.tooltip": "Scans quantum energy signatures",
@@ -15,6 +16,9 @@
   "item.arcanecodex.neural_matrix": "Neural Matrix",
   "item.arcanecodex.cortex_processor": "Cortex Processor",
   "item.arcanecodex.optic_enhancer": "Optic Enhancer",
+  "item.arcanecodex.rpl_codex_basics": "RPL Codex: Basics",
+  "item.arcanecodex.rpl_codex_quantum": "RPL Codex: Quantum",
+  "item.arcanecodex.rpl_codex_temporal": "RPL Codex: Temporal",
   
   "gui.arcanecodex.energy_type.coherent_light": "Coherent Light",
   "gui.arcanecodex.energy_type.quantum_foam": "Quantum Foam",

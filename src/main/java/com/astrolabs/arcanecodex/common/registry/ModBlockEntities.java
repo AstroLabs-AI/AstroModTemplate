@@ -5,6 +5,7 @@ import com.astrolabs.arcanecodex.common.blockentities.AugmentationTableBlockEnti
 import com.astrolabs.arcanecodex.common.blockentities.NeuralInterfaceBlockEntity;
 import com.astrolabs.arcanecodex.common.blockentities.QuantumConduitBlockEntity;
 import com.astrolabs.arcanecodex.common.blockentities.QuantumHarvesterBlockEntity;
+import com.astrolabs.arcanecodex.common.blockentities.RealityCompilerBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -33,6 +34,11 @@ public class ModBlockEntities {
     public static final RegistryObject<BlockEntityType<AugmentationTableBlockEntity>> AUGMENTATION_TABLE =
         BLOCK_ENTITIES.register("augmentation_table", () ->
             BlockEntityType.Builder.of(AugmentationTableBlockEntity::new, ModBlocks.AUGMENTATION_TABLE.get())
+                .build(null));
+    
+    public static final RegistryObject<BlockEntityType<RealityCompilerBlockEntity>> REALITY_COMPILER =
+        BLOCK_ENTITIES.register("reality_compiler", () ->
+            BlockEntityType.Builder.of(RealityCompilerBlockEntity::new, ModBlocks.REALITY_COMPILER.get())
                 .build(null));
     
     public static void register(IEventBus eventBus) {

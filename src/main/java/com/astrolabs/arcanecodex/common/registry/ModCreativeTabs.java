@@ -31,11 +31,17 @@ public class ModCreativeTabs {
                 output.accept(ModItems.CORTEX_PROCESSOR.get());
                 output.accept(ModItems.OPTIC_ENHANCER.get());
                 
+                // RPL Codex
+                output.accept(ModItems.RPL_CODEX_BASICS.get());
+                output.accept(ModItems.RPL_CODEX_QUANTUM.get());
+                output.accept(ModItems.RPL_CODEX_TEMPORAL.get());
+                
                 // Blocks
                 output.accept(ModBlocks.QUANTUM_HARVESTER.get());
                 output.accept(ModBlocks.NEURAL_INTERFACE.get());
                 output.accept(ModBlocks.QUANTUM_CONDUIT.get());
                 output.accept(ModBlocks.AUGMENTATION_TABLE.get());
+                output.accept(ModBlocks.REALITY_COMPILER.get());
             })
             .build());
     

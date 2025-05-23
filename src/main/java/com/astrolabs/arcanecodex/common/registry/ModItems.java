@@ -2,6 +2,7 @@ package com.astrolabs.arcanecodex.common.registry;
 
 import com.astrolabs.arcanecodex.ArcaneCodex;
 import com.astrolabs.arcanecodex.common.items.MemoryFragmentItem;
+import com.astrolabs.arcanecodex.common.items.RPLCodexItem;
 import com.astrolabs.arcanecodex.common.items.augments.CortexProcessorAugment;
 import com.astrolabs.arcanecodex.common.items.augments.OpticEnhancerAugment;
 import com.astrolabs.arcanecodex.common.items.tools.NanoMultitool;
@@ -39,6 +40,9 @@ public class ModItems {
     public static final RegistryObject<Item> AUGMENTATION_TABLE_ITEM = ITEMS.register("augmentation_table",
         () -> new BlockItem(ModBlocks.AUGMENTATION_TABLE.get(), new Item.Properties()));
     
+    public static final RegistryObject<Item> REALITY_COMPILER_ITEM = ITEMS.register("reality_compiler",
+        () -> new BlockItem(ModBlocks.REALITY_COMPILER.get(), new Item.Properties()));
+    
     // Components and materials
     public static final RegistryObject<Item> QUANTUM_CORE = ITEMS.register("quantum_core",
         () -> new Item(new Item.Properties().stacksTo(16).rarity(net.minecraft.world.item.Rarity.UNCOMMON)));
@@ -52,6 +56,16 @@ public class ModItems {
     
     public static final RegistryObject<Item> OPTIC_ENHANCER = ITEMS.register("optic_enhancer",
         () -> new OpticEnhancerAugment(new Item.Properties().rarity(net.minecraft.world.item.Rarity.UNCOMMON)));
+    
+    // RPL Codex items
+    public static final RegistryObject<Item> RPL_CODEX_BASICS = ITEMS.register("rpl_codex_basics",
+        () -> new RPLCodexItem(new Item.Properties().stacksTo(1).rarity(net.minecraft.world.item.Rarity.RARE), "basics"));
+    
+    public static final RegistryObject<Item> RPL_CODEX_QUANTUM = ITEMS.register("rpl_codex_quantum",
+        () -> new RPLCodexItem(new Item.Properties().stacksTo(1).rarity(net.minecraft.world.item.Rarity.RARE), "quantum"));
+    
+    public static final RegistryObject<Item> RPL_CODEX_TEMPORAL = ITEMS.register("rpl_codex_temporal",
+        () -> new RPLCodexItem(new Item.Properties().stacksTo(1).rarity(net.minecraft.world.item.Rarity.EPIC), "temporal"));
     
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
