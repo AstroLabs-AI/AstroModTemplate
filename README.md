@@ -11,11 +11,12 @@ Astro Expansion transforms Minecraft into a space-age sandbox with advanced tech
 
 ## 📢 Current Status
 
-**Phase 2 Complete!** 🎉 - Advanced technology systems are now implemented and ready for testing!
+**Phase 3 Alpha Available!** 🚀 - Multiblock structures and fluid systems are now in early testing!
 
 - ✅ **Phase 1**: Energy System, Processing Machines, New Materials
 - ✅ **Phase 2**: Digital Storage Network, AI Drones, Component Assembly
-- 🚧 **Coming Next**: Space exploration and multiblock structures (Phase 3)
+- ✅ **Phase 3 (Alpha)**: Industrial Furnace Multiblock, Fluid Pipes & Tanks
+- 🚧 **Coming Next**: Advanced multiblock structures and space exploration
 
 ## 🌟 Features
 
@@ -35,9 +36,16 @@ Astro Expansion transforms Minecraft into a space-age sandbox with advanced tech
 - **AI Drones**: 5 types - Mining, Construction, Farming, Combat, Logistics
 - **Drone Dock**: Charge and manage your drone fleet
 
-### Coming Soon (Phase 3) 🚧
+### Phase 3 (Alpha) 🚧
+- **Industrial Furnace**: 3x3x3 multiblock structure for bulk smelting
+- **Fluid System**: Transport water, lava, and custom fluids
+- **Fluid Tanks**: Store up to 16 buckets of fluid
+- **Fluid Pipes**: Connect tanks and machines
+- **Import/Export Buses**: Now work with multiblock structures
+
+### Coming Soon 🔮
 - **Space Travel**: Build rockets and explore new dimensions
-- **Multiblock Structures**: Large-scale machines and reactors
+- **Advanced Multiblocks**: Nuclear reactors, ore processing plants
 - **Advanced Automation**: Programmable controllers and logistics
 - **Weather System**: Dynamic weather events with gameplay effects
 - **Bioengineering**: Grow and modify alien plants
@@ -50,7 +58,7 @@ Astro Expansion transforms Minecraft into a space-age sandbox with advanced tech
 
 2. **Download Astro Expansion**
    - Get the latest release from the [Releases page](https://github.com/AstroLabs-AI/AstroExpansion/releases)
-   - Download the JAR file (e.g., `astroexpansion-1.0.0-mc1.20.1.jar`)
+   - Download the JAR file (e.g., `astroexpansion-0.3.0-alpha-mc1.20.1.jar`)
 
 3. **Install the Mod**
    - Place the JAR file in your `.minecraft/mods` folder
@@ -66,6 +74,12 @@ Astro Expansion transforms Minecraft into a space-age sandbox with advanced tech
 /give @p astroexpansion:material_processor
 /give @p astroexpansion:energy_conduit 16
 /give @p minecraft:coal 64
+
+# Phase 3 items
+/give @p astroexpansion:industrial_furnace_controller
+/give @p astroexpansion:furnace_casing 26
+/give @p astroexpansion:fluid_tank
+/give @p astroexpansion:fluid_pipe 16
 ```
 
 ### Survival Progression
@@ -89,6 +103,12 @@ Astro Expansion transforms Minecraft into a space-age sandbox with advanced tech
    - Connect to material processor with energy conduits
    - Process raw ores into dusts for 2x output
    - Smelt dusts into ingots
+
+4. **Build Your First Multiblock** (Phase 3)
+   - Craft 26 Furnace Casings
+   - Place Industrial Furnace Controller
+   - Build 3x3x3 structure around it
+   - Connect power and enjoy bulk smelting!
 
 ## 🔧 Development
 
@@ -149,9 +169,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - [x] Phase 1: Core Systems (Energy, Machines, Ores)
 - [x] Phase 2: Storage & Automation (Digital Storage, Drones)
-- [ ] Phase 3: Space & Structures (Multiblock Machines, Advanced Automation)
-- [ ] Phase 4: Weather & Biology (Dynamic Weather, Bioengineering)
+- [x] Phase 3: Multiblock & Fluids (Alpha Released!)
+- [ ] Phase 4: Advanced Multiblocks & Space Prep
 - [ ] Phase 5: Space Age (Rockets, Space Stations, Planets)
+- [ ] Phase 6: Weather & Biology (Dynamic Weather, Bioengineering)
 
 ---
 
