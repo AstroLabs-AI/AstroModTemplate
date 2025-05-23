@@ -1,0 +1,121 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to release (e.g., 1.0.0)'
+        required: true
+        type: string
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+    
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+    
+    - name: Setup Gradle
+      uses: gradle/actions/setup-gradle@v3
+    
+    - name: Get version
+      id: get_version
+      run: |
+        if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+          VERSION="${{ github.event.inputs.version }}"
+        else
+          VERSION=${GITHUB_REF#refs/tags/v}
+        fi
+        echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
+        echo "Building version: $VERSION"
+    
+    - name: Update version in gradle.properties
+      run: |
+        sed -i "s/mod_version=.*/mod_version=${{ steps.get_version.outputs.VERSION }}/" gradle.properties
+        cat gradle.properties | grep mod_version
+    
+    - name: Build with Gradle
+      run: ./gradlew build
+    
+    - name: Get mod info
+      id: mod_info
+      run: |
+        MOD_ID=$(grep "mod_id=" gradle.properties | cut -d'=' -f2)
+        MC_VERSION=$(grep "minecraft_version=" gradle.properties | cut -d'=' -f2)
+        echo "MOD_ID=$MOD_ID" >> $GITHUB_OUTPUT
+        echo "MC_VERSION=$MC_VERSION" >> $GITHUB_OUTPUT
+        echo "JAR_NAME=${MOD_ID}-${{ steps.get_version.outputs.VERSION }}.jar" >> $GITHUB_OUTPUT
+        echo "DISPLAY_NAME=${MOD_ID}-${{ steps.get_version.outputs.VERSION }}-mc${MC_VERSION}.jar" >> $GITHUB_OUTPUT
+    
+    - name: Rename JAR for release
+      run: |
+        mv build/libs/${{ steps.mod_info.outputs.JAR_NAME }} build/libs/${{ steps.mod_info.outputs.DISPLAY_NAME }}
+    
+    - name: Generate changelog
+      id: changelog
+      run: |
+        cat > release_notes.md << 'EOF'
+        # Astro Expansion v${{ steps.get_version.outputs.VERSION }}
+        
+        **Minecraft Version:** ${{ steps.mod_info.outputs.MC_VERSION }}  
+        **Forge Version:** 47.2.0+
+        
+        ## 📦 Installation
+        1. Install Minecraft Forge for 1.20.1 (version 47.2.0 or higher)
+        2. Download the JAR file below
+        3. Place it in your `.minecraft/mods` folder
+        4. Launch Minecraft and enjoy!
+        
+        ## ✨ Features
+        - Energy generation and storage systems
+        - Material processing machines
+        - New ores: Titanium, Lithium, and Uranium
+        - Energy conduits for power distribution
+        - Ore washing for increased yields
+        
+        ## 🔧 Getting Started
+        ```
+        /give @p astroexpansion:titanium_ore 64
+        /give @p astroexpansion:basic_generator
+        /give @p astroexpansion:material_processor
+        ```
+        
+        ---
+        
+        **Full documentation:** [GitHub Repository](https://github.com/${{ github.repository }})
+        EOF
+    
+    - name: Create Release
+      uses: softprops/action-gh-release@v1
+      with:
+        tag_name: v${{ steps.get_version.outputs.VERSION }}
+        name: Astro Expansion v${{ steps.get_version.outputs.VERSION }}
+        body_path: release_notes.md
+        draft: false
+        prerelease: false
+        files: |
+          build/libs/${{ steps.mod_info.outputs.DISPLAY_NAME }}
+          
+    - name: Upload to CurseForge (placeholder)
+      run: |
+        echo "CurseForge upload would happen here with API key"
+        echo "File: build/libs/${{ steps.mod_info.outputs.DISPLAY_NAME }}"
+        
+    - name: Upload to Modrinth (placeholder)
+      run: |
+        echo "Modrinth upload would happen here with API key"
+        echo "File: build/libs/${{ steps.mod_info.outputs.DISPLAY_NAME }}"

@@ -1,0 +1,143 @@
+package com.astrolabs.astroexpansion.common.registry;
+
+import com.astrolabs.astroexpansion.AstroExpansion;
+import com.astrolabs.astroexpansion.common.blocks.*;
+import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.DropExperienceBlock;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.MapColor;
+import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
+
+import java.util.function.Supplier;
+
+public class ModBlocks {
+    public static final DeferredRegister<Block> BLOCKS = 
+        DeferredRegister.create(ForgeRegistries.BLOCKS, AstroExpansion.MODID);
+    
+    // Ores
+    public static final RegistryObject<Block> TITANIUM_ORE = registerBlock("titanium_ore",
+        () -> new DropExperienceBlock(BlockBehaviour.Properties.of()
+            .mapColor(MapColor.STONE)
+            .requiresCorrectToolForDrops()
+            .strength(3.0F, 3.0F)
+            .sound(SoundType.STONE),
+            UniformInt.of(0, 2)));
+    
+    public static final RegistryObject<Block> DEEPSLATE_TITANIUM_ORE = registerBlock("deepslate_titanium_ore",
+        () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(TITANIUM_ORE.get())
+            .mapColor(MapColor.DEEPSLATE)
+            .strength(4.5F, 3.0F)
+            .sound(SoundType.DEEPSLATE)));
+    
+    public static final RegistryObject<Block> LITHIUM_ORE = registerBlock("lithium_ore",
+        () -> new DropExperienceBlock(BlockBehaviour.Properties.of()
+            .mapColor(MapColor.STONE)
+            .requiresCorrectToolForDrops()
+            .strength(3.0F, 3.0F)
+            .sound(SoundType.STONE),
+            UniformInt.of(0, 2)));
+    
+    public static final RegistryObject<Block> DEEPSLATE_LITHIUM_ORE = registerBlock("deepslate_lithium_ore",
+        () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(LITHIUM_ORE.get())
+            .mapColor(MapColor.DEEPSLATE)
+            .strength(4.5F, 3.0F)
+            .sound(SoundType.DEEPSLATE)));
+    
+    public static final RegistryObject<Block> URANIUM_ORE = registerBlock("uranium_ore",
+        () -> new DropExperienceBlock(BlockBehaviour.Properties.of()
+            .mapColor(MapColor.STONE)
+            .requiresCorrectToolForDrops()
+            .strength(4.0F, 3.0F)
+            .sound(SoundType.STONE),
+            UniformInt.of(2, 5)));
+    
+    public static final RegistryObject<Block> DEEPSLATE_URANIUM_ORE = registerBlock("deepslate_uranium_ore",
+        () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(URANIUM_ORE.get())
+            .mapColor(MapColor.DEEPSLATE)
+            .strength(5.0F, 3.0F)
+            .sound(SoundType.DEEPSLATE)));
+    
+    // Storage Blocks
+    public static final RegistryObject<Block> TITANIUM_BLOCK = registerBlock("titanium_block",
+        () -> new Block(BlockBehaviour.Properties.of()
+            .mapColor(MapColor.METAL)
+            .requiresCorrectToolForDrops()
+            .strength(5.0F, 6.0F)
+            .sound(SoundType.METAL)));
+    
+    public static final RegistryObject<Block> LITHIUM_BLOCK = registerBlock("lithium_block",
+        () -> new Block(BlockBehaviour.Properties.of()
+            .mapColor(MapColor.METAL)
+            .requiresCorrectToolForDrops()
+            .strength(5.0F, 6.0F)
+            .sound(SoundType.METAL)));
+    
+    public static final RegistryObject<Block> URANIUM_BLOCK = registerBlock("uranium_block",
+        () -> new Block(BlockBehaviour.Properties.of()
+            .mapColor(MapColor.COLOR_GREEN)
+            .requiresCorrectToolForDrops()
+            .strength(5.0F, 6.0F)
+            .sound(SoundType.METAL)));
+    
+    // Machines
+    public static final RegistryObject<Block> BASIC_GENERATOR = registerBlock("basic_generator",
+        () -> new BasicGeneratorBlock(BlockBehaviour.Properties.of()
+            .mapColor(MapColor.METAL)
+            .requiresCorrectToolForDrops()
+            .strength(3.5F)
+            .sound(SoundType.METAL)
+            .noOcclusion()));
+    
+    public static final RegistryObject<Block> MATERIAL_PROCESSOR = registerBlock("material_processor",
+        () -> new MaterialProcessorBlock(BlockBehaviour.Properties.of()
+            .mapColor(MapColor.METAL)
+            .requiresCorrectToolForDrops()
+            .strength(3.5F)
+            .sound(SoundType.METAL)
+            .noOcclusion()));
+    
+    public static final RegistryObject<Block> ORE_WASHER = registerBlock("ore_washer",
+        () -> new OreWasherBlock(BlockBehaviour.Properties.of()
+            .mapColor(MapColor.METAL)
+            .requiresCorrectToolForDrops()
+            .strength(3.5F)
+            .sound(SoundType.METAL)
+            .noOcclusion()));
+    
+    public static final RegistryObject<Block> ENERGY_CONDUIT = BLOCKS.register("energy_conduit",
+        () -> new EnergyConduitBlock(BlockBehaviour.Properties.of()
+            .mapColor(MapColor.METAL)
+            .strength(2.0F)
+            .sound(SoundType.METAL)
+            .noOcclusion()));
+    
+    public static final RegistryObject<Block> ENERGY_STORAGE = registerBlock("energy_storage",
+        () -> new EnergyStorageBlock(BlockBehaviour.Properties.of()
+            .mapColor(MapColor.METAL)
+            .requiresCorrectToolForDrops()
+            .strength(3.5F)
+            .sound(SoundType.METAL)));
+    
+    // Register block with item
+    private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
+        RegistryObject<T> toReturn = BLOCKS.register(name, block);
+        registerBlockItem(name, toReturn);
+        return toReturn;
+    }
+    
+    private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block) {
+        return ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+    }
+    
+    public static void register(IEventBus eventBus) {
+        BLOCKS.register(eventBus);
+    }
+}

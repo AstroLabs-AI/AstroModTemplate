@@ -1,0 +1,41 @@
+{
+  "creativetab.astroexpansion": "Astro Expansion",
+  
+  "item.astroexpansion.raw_titanium": "Raw Titanium",
+  "item.astroexpansion.raw_lithium": "Raw Lithium",
+  "item.astroexpansion.raw_uranium": "Raw Uranium",
+  
+  "item.astroexpansion.titanium_ingot": "Titanium Ingot",
+  "item.astroexpansion.lithium_ingot": "Lithium Ingot",
+  "item.astroexpansion.uranium_ingot": "Uranium Ingot",
+  
+  "item.astroexpansion.titanium_dust": "Titanium Dust",
+  "item.astroexpansion.lithium_dust": "Lithium Dust",
+  "item.astroexpansion.uranium_dust": "Uranium Dust",
+  
+  "item.astroexpansion.circuit_board": "Circuit Board",
+  "item.astroexpansion.processor": "Processor",
+  "item.astroexpansion.energy_core": "Energy Core",
+  "item.astroexpansion.wrench": "Wrench",
+  
+  "block.astroexpansion.titanium_ore": "Titanium Ore",
+  "block.astroexpansion.deepslate_titanium_ore": "Deepslate Titanium Ore",
+  "block.astroexpansion.lithium_ore": "Lithium Ore",
+  "block.astroexpansion.deepslate_lithium_ore": "Deepslate Lithium Ore",
+  "block.astroexpansion.uranium_ore": "Uranium Ore",
+  "block.astroexpansion.deepslate_uranium_ore": "Deepslate Uranium Ore",
+  
+  "block.astroexpansion.titanium_block": "Block of Titanium",
+  "block.astroexpansion.lithium_block": "Block of Lithium",
+  "block.astroexpansion.uranium_block": "Block of Uranium",
+  
+  "block.astroexpansion.basic_generator": "Basic Generator",
+  "block.astroexpansion.material_processor": "Material Processor",
+  "block.astroexpansion.ore_washer": "Ore Washer",
+  "block.astroexpansion.energy_conduit": "Energy Conduit",
+  "block.astroexpansion.energy_storage": "Energy Storage",
+  
+  "astroexpansion.energy": "%s FE",
+  "astroexpansion.energy.stored": "Energy: %s / %s FE",
+  "astroexpansion.progress": "Progress: %s%%"
+}
