@@ -1,13 +1,7 @@
 package com.astrolabs.astroexpansion.client;
 
 import com.astrolabs.astroexpansion.AstroExpansion;
-import com.astrolabs.astroexpansion.client.gui.screens.ComponentAssemblerScreen;
-import com.astrolabs.astroexpansion.client.gui.screens.DroneDockScreen;
-import com.astrolabs.astroexpansion.client.gui.screens.FluidTankScreen;
-import com.astrolabs.astroexpansion.client.gui.screens.FusionReactorScreen;
-import com.astrolabs.astroexpansion.client.gui.screens.IndustrialFurnaceScreen;
-import com.astrolabs.astroexpansion.client.gui.screens.StorageCoreScreen;
-import com.astrolabs.astroexpansion.client.gui.screens.StorageTerminalScreen;
+import com.astrolabs.astroexpansion.client.gui.screens.*;
 import com.astrolabs.astroexpansion.client.renderer.DroneRenderer;
 import com.astrolabs.astroexpansion.common.registry.ModEntities;
 import com.astrolabs.astroexpansion.common.registry.ModMenuTypes;
@@ -25,6 +19,10 @@ public class ClientEvents {
     public static void onClientSetup(FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
             // Register menu screens
+            MenuScreens.register(ModMenuTypes.BASIC_GENERATOR_MENU.get(), BasicGeneratorScreen::new);
+            MenuScreens.register(ModMenuTypes.MATERIAL_PROCESSOR_MENU.get(), MaterialProcessorScreen::new);
+            MenuScreens.register(ModMenuTypes.ORE_WASHER_MENU.get(), OreWasherScreen::new);
+            MenuScreens.register(ModMenuTypes.ENERGY_STORAGE_MENU.get(), EnergyStorageScreen::new);
             MenuScreens.register(ModMenuTypes.STORAGE_CORE_MENU.get(), StorageCoreScreen::new);
             MenuScreens.register(ModMenuTypes.STORAGE_TERMINAL_MENU.get(), StorageTerminalScreen::new);
             MenuScreens.register(ModMenuTypes.COMPONENT_ASSEMBLER_MENU.get(), ComponentAssemblerScreen::new);

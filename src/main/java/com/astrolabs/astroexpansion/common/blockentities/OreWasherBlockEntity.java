@@ -25,6 +25,9 @@ import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.energy.IEnergyStorage;
+import net.minecraftforge.fluids.FluidStack;
+import net.minecraftforge.fluids.capability.IFluidHandler;
+import net.minecraftforge.fluids.capability.templates.FluidTank;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
@@ -47,8 +50,16 @@ public class OreWasherBlockEntity extends BlockEntity implements MenuProvider {
     
     private final AstroEnergyStorage energyStorage = new AstroEnergyStorage(10000, 100, 0);
     
+    private final FluidTank fluidTank = new FluidTank(4000) {
+        @Override
+        public boolean isFluidValid(FluidStack stack) {
+            return stack.getFluid() == net.minecraft.world.level.material.Fluids.WATER;
+        }
+    };
+    
     private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
     private LazyOptional<IEnergyStorage> lazyEnergyHandler = LazyOptional.empty();
+    private LazyOptional<IFluidHandler> lazyFluidHandler = LazyOptional.empty();
     
     protected final ContainerData data;
     private int progress = 0;
@@ -65,6 +76,8 @@ public class OreWasherBlockEntity extends BlockEntity implements MenuProvider {
                     case 1 -> OreWasherBlockEntity.this.maxProgress;
                     case 2 -> OreWasherBlockEntity.this.energyStorage.getEnergyStored();
                     case 3 -> OreWasherBlockEntity.this.energyStorage.getMaxEnergyStored();
+                    case 4 -> OreWasherBlockEntity.this.fluidTank.getFluidAmount();
+                    case 5 -> OreWasherBlockEntity.this.fluidTank.getCapacity();
                     default -> 0;
                 };
             }
@@ -80,7 +93,7 @@ public class OreWasherBlockEntity extends BlockEntity implements MenuProvider {
             
             @Override
             public int getCount() {
-                return 4;
+                return 6;
             }
         };
     }
@@ -106,6 +119,10 @@ public class OreWasherBlockEntity extends BlockEntity implements MenuProvider {
             return lazyItemHandler.cast();
         }
         
+        if (cap == ForgeCapabilities.FLUID_HANDLER) {
+            return lazyFluidHandler.cast();
+        }
+        
         return super.getCapability(cap, side);
     }
     
@@ -114,6 +131,7 @@ public class OreWasherBlockEntity extends BlockEntity implements MenuProvider {
         super.onLoad();
         lazyItemHandler = LazyOptional.of(() -> itemHandler);
         lazyEnergyHandler = LazyOptional.of(() -> energyStorage);
+        lazyFluidHandler = LazyOptional.of(() -> fluidTank);
     }
     
     @Override
@@ -121,6 +139,7 @@ public class OreWasherBlockEntity extends BlockEntity implements MenuProvider {
         super.invalidateCaps();
         lazyItemHandler.invalidate();
         lazyEnergyHandler.invalidate();
+        lazyFluidHandler.invalidate();
     }
     
     @Override
@@ -128,6 +147,7 @@ public class OreWasherBlockEntity extends BlockEntity implements MenuProvider {
         nbt.put("inventory", itemHandler.serializeNBT());
         nbt.put("energy", energyStorage.writeToNBT(new CompoundTag()));
         nbt.putInt("progress", progress);
+        nbt.put("fluid", fluidTank.writeToNBT(new CompoundTag()));
         super.saveAdditional(nbt);
     }
     
@@ -137,6 +157,7 @@ public class OreWasherBlockEntity extends BlockEntity implements MenuProvider {
         itemHandler.deserializeNBT(nbt.getCompound("inventory"));
         energyStorage.readFromNBT(nbt.getCompound("energy"));
         progress = nbt.getInt("progress");
+        fluidTank.readFromNBT(nbt.getCompound("fluid"));
     }
     
     public void drops() {

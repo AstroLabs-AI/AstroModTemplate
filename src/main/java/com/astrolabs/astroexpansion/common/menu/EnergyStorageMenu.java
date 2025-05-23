@@ -45,6 +45,14 @@ public class EnergyStorageMenu extends AbstractContainerMenu {
         return ItemStack.EMPTY;
     }
     
+    public int getEnergyStored() {
+        return data.get(0);
+    }
+    
+    public int getMaxEnergyStored() {
+        return data.get(1);
+    }
+    
     @Override
     public boolean stillValid(Player player) {
         return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()),

@@ -19,7 +19,7 @@ public class OreWasherMenu extends AbstractContainerMenu {
     private final ContainerData data;
     
     public OreWasherMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
-        this(id, inv, inv.player.level().getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(4));
+        this(id, inv, inv.player.level().getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(6));
     }
     
     public OreWasherMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
@@ -108,6 +108,30 @@ public class OreWasherMenu extends AbstractContainerMenu {
         }
         sourceSlot.onTake(playerIn, sourceStack);
         return copyOfSourceStack;
+    }
+    
+    public int getEnergyStored() {
+        return data.get(2);
+    }
+    
+    public int getMaxEnergyStored() {
+        return data.get(3);
+    }
+    
+    public int getFluidAmount() {
+        return data.get(4);
+    }
+    
+    public int getFluidCapacity() {
+        return data.get(5);
+    }
+    
+    public int getScaledWater() {
+        int fluid = getFluidAmount();
+        int capacity = getFluidCapacity();
+        int barHeight = 52;
+        
+        return capacity != 0 && fluid != 0 ? fluid * barHeight / capacity : 0;
     }
     
     @Override

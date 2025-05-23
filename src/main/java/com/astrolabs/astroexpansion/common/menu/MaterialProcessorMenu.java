@@ -104,6 +104,14 @@ public class MaterialProcessorMenu extends AbstractContainerMenu {
         return copyOfSourceStack;
     }
     
+    public int getEnergyStored() {
+        return data.get(2);
+    }
+    
+    public int getMaxEnergyStored() {
+        return data.get(3);
+    }
+    
     @Override
     public boolean stillValid(Player player) {
         return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()),
