@@ -145,6 +145,13 @@ cd AstroExpansion
 - 3GB RAM for Gradle
 - Minecraft Development IDE plugin
 
+### Automated Features
+- **GitHub Actions**: Automatic builds and releases
+- **Auto-Push**: Enable with `./autopush.sh enable`
+- **Release Workflow**: Create releases via Actions tab
+
+See [.github/workflows/README.md](.github/workflows/README.md) for details.
+
 ## 📚 Documentation
 
 - [Phase Summaries](PHASE_10_COMPLETE.md) - Development history
