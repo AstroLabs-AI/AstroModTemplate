@@ -1,12 +1,22 @@
 # Astro Expansion 🚀
 
-[![Build Status](https://github.com/AstroExpansion/AstroExpansion/workflows/Build/badge.svg)](https://github.com/AstroExpansion/AstroExpansion/actions)
-[![Latest Release](https://img.shields.io/github/v/release/AstroExpansion/AstroExpansion)](https://github.com/AstroExpansion/AstroExpansion/releases/latest)
+[![Build Status](https://github.com/AstroLabs-AI/AstroExpansion/workflows/Build/badge.svg)](https://github.com/AstroLabs-AI/AstroExpansion/actions)
+[![Latest Release](https://img.shields.io/github/v/release/AstroLabs-AI/AstroExpansion)](https://github.com/AstroLabs-AI/AstroExpansion/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/AstroLabs-AI/AstroExpansion/total)](https://github.com/AstroLabs-AI/AstroExpansion/releases)
 [![Minecraft](https://img.shields.io/badge/Minecraft-1.20.1-green.svg)](https://minecraft.net/)
 [![Forge](https://img.shields.io/badge/Forge-47.2.0+-orange.svg)](https://files.minecraftforge.net/)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 Astro Expansion transforms Minecraft into a space-age sandbox with advanced technology, energy systems, and automation. Progress from mining exotic ores to building complex machines and energy networks!
+
+## 📢 Current Status
+
+**Phase 1 Released!** 🎉 - Core systems are complete and functional. Download the latest release to start your space-age journey!
+
+- ✅ **Energy System**: Working generators, conduits, and storage
+- ✅ **Processing Machines**: Material processor and ore washer
+- ✅ **New Materials**: Titanium, Lithium, and Uranium
+- 🚧 **Coming Next**: Digital storage network and AI drones (Phase 2)
 
 ## 🌟 Features
 
@@ -28,18 +38,30 @@ Astro Expansion transforms Minecraft into a space-age sandbox with advanced tech
 ## 📦 Installation
 
 1. **Install Minecraft Forge**
-   - Download Forge 1.20.1 (version 47.2.0 or newer)
+   - Download [Forge 1.20.1](https://files.minecraftforge.net/net/minecraftforge/forge/index_1.20.1.html) (version 47.2.0 or newer)
    - Run the installer and select "Install Client"
 
 2. **Download Astro Expansion**
-   - Get the latest release from the [Releases page](https://github.com/AstroExpansion/AstroExpansion/releases)
-   - Download the JAR file
+   - Get the latest release from the [Releases page](https://github.com/AstroLabs-AI/AstroExpansion/releases)
+   - Download the JAR file (e.g., `astroexpansion-1.0.0-mc1.20.1.jar`)
 
 3. **Install the Mod**
    - Place the JAR file in your `.minecraft/mods` folder
    - Launch Minecraft with the Forge profile
 
 ## 🎮 Getting Started
+
+### Quick Start Commands
+```minecraft
+# Get started immediately with creative mode items
+/give @p astroexpansion:titanium_ore 64
+/give @p astroexpansion:basic_generator
+/give @p astroexpansion:material_processor
+/give @p astroexpansion:energy_conduit 16
+/give @p minecraft:coal 64
+```
+
+### Survival Progression
 
 1. **Find New Ores**
    ```
@@ -56,8 +78,9 @@ Astro Expansion transforms Minecraft into a space-age sandbox with advanced tech
    ```
 
 3. **Set Up Processing**
-   - Connect generator to material processor with conduits
-   - Process raw ores into dusts for double output
+   - Place generator and fuel it with coal
+   - Connect to material processor with energy conduits
+   - Process raw ores into dusts for 2x output
    - Smelt dusts into ingots
 
 ## 🔧 Development
@@ -65,13 +88,17 @@ Astro Expansion transforms Minecraft into a space-age sandbox with advanced tech
 ### Building from Source
 
 ```bash
-git clone https://github.com/AstroExpansion/AstroExpansion.git
+git clone https://github.com/AstroLabs-AI/AstroExpansion.git
 cd AstroExpansion
 chmod +x gradlew
 ./gradlew build
 ```
 
 The built JAR will be in `build/libs/`
+
+### Requirements
+- Java 17 or newer
+- 3GB of RAM allocated to Gradle
 
 ### Contributing
 
@@ -89,16 +116,16 @@ The built JAR will be in `build/libs/`
 
 ## 📚 Documentation
 
-- [Getting Started Guide](docs/getting-started.md)
-- [Energy System](docs/energy-system.md)
-- [Machine Guide](docs/machines.md)
-- [API Documentation](docs/api.md)
+- [Phase 1 Summary](PHASE_1_COMPLETE.md) - Current features
+- [Implementation Plan](ASTRO_EXPANSION_FULL_IMPLEMENTATION_PLAN.md) - Full roadmap
+- [Contributing Guide](CONTRIBUTING.md) - How to contribute
+- [GitHub Wiki](https://github.com/AstroLabs-AI/AstroExpansion/wiki) - Detailed guides
 
 ## 🤝 Support
 
-- **Issues**: [GitHub Issues](https://github.com/AstroExpansion/AstroExpansion/issues)
-- **Discord**: [Join our Discord](https://discord.gg/astroexpansion) *(coming soon)*
-- **Wiki**: [GitHub Wiki](https://github.com/AstroExpansion/AstroExpansion/wiki)
+- **Issues**: [GitHub Issues](https://github.com/AstroLabs-AI/AstroExpansion/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/AstroLabs-AI/AstroExpansion/discussions)
+- **Discord**: Coming soon!
 
 ## 📄 License
 
@@ -106,8 +133,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👥 Credits
 
-- **Lead Developer**: AstroLabs Team
-- **Contributors**: See [contributors page](https://github.com/AstroExpansion/AstroExpansion/contributors)
+- **Lead Developer**: AstroLabs AI Team
+- **Contributors**: See [contributors page](https://github.com/AstroLabs-AI/AstroExpansion/contributors)
 - **Special Thanks**: The Minecraft Forge team
 
 ## 🎯 Roadmap
