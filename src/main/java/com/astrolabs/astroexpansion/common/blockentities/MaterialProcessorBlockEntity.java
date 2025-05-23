@@ -45,7 +45,7 @@ public class MaterialProcessorBlockEntity extends BlockEntity implements MenuPro
         }
     };
     
-    private final AstroEnergyStorage energyStorage = new AstroEnergyStorage(10000, 100, 0);
+    private final AstroEnergyStorage energyStorage = new AstroEnergyStorage(10000, 100, 100);
     
     private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
     private LazyOptional<IEnergyStorage> lazyEnergyHandler = LazyOptional.empty();

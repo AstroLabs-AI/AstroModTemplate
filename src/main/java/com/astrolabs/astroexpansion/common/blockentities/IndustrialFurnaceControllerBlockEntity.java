@@ -53,7 +53,7 @@ public class IndustrialFurnaceControllerBlockEntity extends MultiblockController
         }
     };
     
-    private final AstroEnergyStorage energyStorage = new AstroEnergyStorage(10000, 100, 0);
+    private final AstroEnergyStorage energyStorage = new AstroEnergyStorage(10000, 100, 100);
     private final LazyOptional<IItemHandler> itemHandlerLazyOptional = LazyOptional.of(() -> itemHandler);
     private final LazyOptional<IEnergyStorage> energyStorageLazyOptional = LazyOptional.of(() -> energyStorage);
     

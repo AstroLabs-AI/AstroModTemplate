@@ -51,7 +51,7 @@ public class StorageCoreBlockEntity extends BlockEntity implements MenuProvider,
         }
     };
     
-    private final AstroEnergyStorage energyStorage = new AstroEnergyStorage(50000, 1000, 0);
+    private final AstroEnergyStorage energyStorage = new AstroEnergyStorage(50000, 1000, 1000);
     
     private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
     private LazyOptional<IEnergyStorage> lazyEnergyHandler = LazyOptional.empty();

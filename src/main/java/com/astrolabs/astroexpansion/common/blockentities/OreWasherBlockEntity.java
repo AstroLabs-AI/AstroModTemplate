@@ -48,7 +48,7 @@ public class OreWasherBlockEntity extends BlockEntity implements MenuProvider {
         }
     };
     
-    private final AstroEnergyStorage energyStorage = new AstroEnergyStorage(10000, 100, 0);
+    private final AstroEnergyStorage energyStorage = new AstroEnergyStorage(10000, 100, 100);
     
     private final FluidTank fluidTank = new FluidTank(4000) {
         @Override

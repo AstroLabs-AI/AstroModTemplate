@@ -45,7 +45,7 @@ public class ComponentAssemblerBlockEntity extends BlockEntity implements MenuPr
         }
     };
     
-    private final AstroEnergyStorage energyStorage = new AstroEnergyStorage(20000, 100, 0);
+    private final AstroEnergyStorage energyStorage = new AstroEnergyStorage(20000, 100, 100);
     
     private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
     private LazyOptional<IEnergyStorage> lazyEnergyHandler = LazyOptional.empty();
