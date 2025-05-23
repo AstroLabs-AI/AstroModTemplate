@@ -59,7 +59,7 @@ public class FusionReactorPattern implements IMultiblockPattern {
     public FusionReactorPattern() {
         matchers.put('C', MultiblockMatcher.block(ModBlocks.FUSION_REACTOR_CONTROLLER.get()));
         matchers.put('L', MultiblockMatcher.block(ModBlocks.FUSION_COIL.get()));
-        matchers.put('O', MultiblockMatcher.block(ModBlocks.FUSION_CORE.get()));
+        matchers.put('O', MultiblockMatcher.block(ModBlocks.FUSION_CORE_BLOCK.get()));
         matchers.put(' ', MultiblockMatcher.block(Blocks.AIR));
     }
     

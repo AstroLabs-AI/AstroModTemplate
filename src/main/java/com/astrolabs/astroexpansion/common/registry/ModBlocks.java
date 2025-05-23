@@ -186,7 +186,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> FUSION_COIL = registerBlock("fusion_coil",
         () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
     
-    public static final RegistryObject<Block> FUSION_CORE = registerBlock("fusion_core",
+    public static final RegistryObject<Block> FUSION_CORE_BLOCK = registerBlock("fusion_core_block",
         () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).lightLevel(state -> 15)));
     
     // Quantum Computer

@@ -58,7 +58,7 @@
   "block.astroexpansion.fusion_reactor_casing": "Fusion Reactor Casing",
   "block.astroexpansion.fusion_reactor_controller": "Fusion Reactor Controller",
   "block.astroexpansion.fusion_coil": "Fusion Coil",
-  "block.astroexpansion.fusion_core": "Fusion Core",
+  "block.astroexpansion.fusion_core_block": "Fusion Core Block",
   
   "block.astroexpansion.quantum_computer_controller": "Quantum Computer Controller",
   "block.astroexpansion.quantum_casing": "Quantum Casing",
