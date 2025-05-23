@@ -37,6 +37,16 @@ public class ModBlockEntities {
             () -> BlockEntityType.Builder.of(EnergyStorageBlockEntity::new,
                 ModBlocks.ENERGY_STORAGE.get()).build(null));
     
+    public static final RegistryObject<BlockEntityType<StorageCoreBlockEntity>> STORAGE_CORE =
+        BLOCK_ENTITIES.register("storage_core",
+            () -> BlockEntityType.Builder.of(StorageCoreBlockEntity::new,
+                ModBlocks.STORAGE_CORE.get()).build(null));
+    
+    public static final RegistryObject<BlockEntityType<StorageTerminalBlockEntity>> STORAGE_TERMINAL =
+        BLOCK_ENTITIES.register("storage_terminal",
+            () -> BlockEntityType.Builder.of(StorageTerminalBlockEntity::new,
+                ModBlocks.STORAGE_TERMINAL.get()).build(null));
+    
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);
     }

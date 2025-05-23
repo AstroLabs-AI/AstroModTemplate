@@ -58,6 +58,16 @@ public class ModCreativeTabs {
                 output.accept(ModBlocks.ENERGY_CONDUIT.get());
                 output.accept(ModBlocks.ENERGY_STORAGE.get());
                 
+                // Storage System
+                output.accept(ModBlocks.STORAGE_CORE.get());
+                output.accept(ModBlocks.STORAGE_TERMINAL.get());
+                output.accept(ModItems.STORAGE_DRIVE_1K.get());
+                output.accept(ModItems.STORAGE_DRIVE_4K.get());
+                output.accept(ModItems.STORAGE_DRIVE_16K.get());
+                output.accept(ModItems.STORAGE_DRIVE_64K.get());
+                output.accept(ModItems.STORAGE_HOUSING.get());
+                output.accept(ModItems.STORAGE_PROCESSOR.get());
+                
                 // Tools
                 output.accept(ModItems.WRENCH.get());
             })

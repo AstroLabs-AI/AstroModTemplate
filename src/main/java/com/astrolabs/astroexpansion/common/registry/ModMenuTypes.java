@@ -27,6 +27,12 @@ public class ModMenuTypes {
     public static final RegistryObject<MenuType<EnergyStorageMenu>> ENERGY_STORAGE_MENU =
         registerMenuType(EnergyStorageMenu::new, "energy_storage_menu");
     
+    public static final RegistryObject<MenuType<StorageCoreMenu>> STORAGE_CORE_MENU =
+        registerMenuType(StorageCoreMenu::new, "storage_core_menu");
+    
+    public static final RegistryObject<MenuType<StorageTerminalMenu>> STORAGE_TERMINAL_MENU =
+        registerMenuType(StorageTerminalMenu::new, "storage_terminal_menu");
+    
     private static <T extends AbstractContainerMenu> RegistryObject<MenuType<T>> registerMenuType(IContainerFactory<T> factory, String name) {
         return MENUS.register(name, () -> IForgeMenuType.create(factory));
     }

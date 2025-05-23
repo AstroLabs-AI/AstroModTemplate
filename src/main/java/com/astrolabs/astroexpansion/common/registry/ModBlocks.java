@@ -126,6 +126,23 @@ public class ModBlocks {
             .strength(3.5F)
             .sound(SoundType.METAL)));
     
+    // Storage System
+    public static final RegistryObject<Block> STORAGE_CORE = registerBlock("storage_core",
+        () -> new StorageCoreBlock(BlockBehaviour.Properties.of()
+            .mapColor(MapColor.METAL)
+            .requiresCorrectToolForDrops()
+            .strength(3.5F)
+            .sound(SoundType.METAL)
+            .lightLevel(state -> state.getValue(StorageCoreBlock.FORMED) ? 7 : 0)));
+    
+    public static final RegistryObject<Block> STORAGE_TERMINAL = registerBlock("storage_terminal",
+        () -> new StorageTerminalBlock(BlockBehaviour.Properties.of()
+            .mapColor(MapColor.METAL)
+            .requiresCorrectToolForDrops()
+            .strength(3.5F)
+            .sound(SoundType.METAL)
+            .noOcclusion()));
+    
     // Register block with item
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

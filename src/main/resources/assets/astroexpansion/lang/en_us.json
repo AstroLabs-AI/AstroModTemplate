@@ -35,7 +35,19 @@
   "block.astroexpansion.energy_conduit": "Energy Conduit",
   "block.astroexpansion.energy_storage": "Energy Storage",
   
+  "block.astroexpansion.storage_core": "Storage Core",
+  "block.astroexpansion.storage_terminal": "Storage Terminal",
+  
+  "item.astroexpansion.storage_drive_1k": "1k Storage Drive",
+  "item.astroexpansion.storage_drive_4k": "4k Storage Drive",
+  "item.astroexpansion.storage_drive_16k": "16k Storage Drive",
+  "item.astroexpansion.storage_drive_64k": "64k Storage Drive",
+  "item.astroexpansion.storage_housing": "Storage Housing",
+  "item.astroexpansion.storage_processor": "Storage Processor",
+  
   "astroexpansion.energy": "%s FE",
   "astroexpansion.energy.stored": "Energy: %s / %s FE",
-  "astroexpansion.progress": "Progress: %s%%"
+  "astroexpansion.progress": "Progress: %s%%",
+  "astroexpansion.storage.items": "Items: %s / %s",
+  "astroexpansion.storage.types": "Types: %s / 63"
 }
