@@ -148,7 +148,7 @@ public class ModItems {
     public static final RegistryObject<Item> HELIUM3_CRYSTAL = ITEMS.register("helium3_crystal",
         () -> new Item(new Item.Properties()));
     
-    public static final RegistryObject<Item> MOON_DUST = ITEMS.register("moon_dust",
+    public static final RegistryObject<Item> MOON_DUST_ITEM = ITEMS.register("moon_dust_item",
         () -> new Item(new Item.Properties()));
     
     public static void register(IEventBus eventBus) {
