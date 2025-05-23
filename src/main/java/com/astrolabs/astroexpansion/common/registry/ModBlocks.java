@@ -143,6 +143,31 @@ public class ModBlocks {
             .sound(SoundType.METAL)
             .noOcclusion()));
     
+    // Drones
+    public static final RegistryObject<Block> DRONE_DOCK = registerBlock("drone_dock",
+        () -> new DroneDockBlock(BlockBehaviour.Properties.of()
+            .mapColor(MapColor.METAL)
+            .requiresCorrectToolForDrops()
+            .strength(3.5F)
+            .sound(SoundType.METAL)
+            .lightLevel(state -> state.getValue(DroneDockBlock.CHARGING) ? 7 : 0)));
+    
+    // Storage Automation
+    public static final RegistryObject<Block> IMPORT_BUS = registerBlock("import_bus",
+        () -> new ImportBusBlock());
+    
+    public static final RegistryObject<Block> EXPORT_BUS = registerBlock("export_bus",
+        () -> new ExportBusBlock());
+    
+    // Advanced Machines
+    public static final RegistryObject<Block> COMPONENT_ASSEMBLER = registerBlock("component_assembler",
+        () -> new ComponentAssemblerBlock(BlockBehaviour.Properties.of()
+            .mapColor(MapColor.METAL)
+            .requiresCorrectToolForDrops()
+            .strength(3.5F)
+            .sound(SoundType.METAL)
+            .noOcclusion()));
+    
     // Register block with item
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

@@ -47,6 +47,26 @@ public class ModBlockEntities {
             () -> BlockEntityType.Builder.of(StorageTerminalBlockEntity::new,
                 ModBlocks.STORAGE_TERMINAL.get()).build(null));
     
+    public static final RegistryObject<BlockEntityType<DroneDockBlockEntity>> DRONE_DOCK =
+        BLOCK_ENTITIES.register("drone_dock",
+            () -> BlockEntityType.Builder.of(DroneDockBlockEntity::new,
+                ModBlocks.DRONE_DOCK.get()).build(null));
+    
+    public static final RegistryObject<BlockEntityType<ImportBusBlockEntity>> IMPORT_BUS =
+        BLOCK_ENTITIES.register("import_bus",
+            () -> BlockEntityType.Builder.of(ImportBusBlockEntity::new,
+                ModBlocks.IMPORT_BUS.get()).build(null));
+    
+    public static final RegistryObject<BlockEntityType<ExportBusBlockEntity>> EXPORT_BUS =
+        BLOCK_ENTITIES.register("export_bus",
+            () -> BlockEntityType.Builder.of(ExportBusBlockEntity::new,
+                ModBlocks.EXPORT_BUS.get()).build(null));
+    
+    public static final RegistryObject<BlockEntityType<ComponentAssemblerBlockEntity>> COMPONENT_ASSEMBLER =
+        BLOCK_ENTITIES.register("component_assembler",
+            () -> BlockEntityType.Builder.of(ComponentAssemblerBlockEntity::new,
+                ModBlocks.COMPONENT_ASSEMBLER.get()).build(null));
+    
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);
     }

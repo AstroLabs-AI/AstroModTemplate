@@ -45,6 +45,25 @@
   "item.astroexpansion.storage_housing": "Storage Housing",
   "item.astroexpansion.storage_processor": "Storage Processor",
   
+  "block.astroexpansion.drone_dock": "Drone Dock",
+  "block.astroexpansion.component_assembler": "Component Assembler",
+  "block.astroexpansion.import_bus": "Import Bus",
+  "block.astroexpansion.export_bus": "Export Bus",
+  
+  "item.astroexpansion.mining_drone": "Mining Drone",
+  "item.astroexpansion.construction_drone": "Construction Drone",
+  "item.astroexpansion.farming_drone": "Farming Drone",
+  "item.astroexpansion.combat_drone": "Combat Drone",
+  "item.astroexpansion.logistics_drone": "Logistics Drone",
+  "item.astroexpansion.drone_core": "Drone Core",
+  "item.astroexpansion.drone_shell": "Drone Shell",
+  
+  "entity.astroexpansion.mining_drone": "Mining Drone",
+  "entity.astroexpansion.construction_drone": "Construction Drone",
+  "entity.astroexpansion.farming_drone": "Farming Drone",
+  "entity.astroexpansion.combat_drone": "Combat Drone",
+  "entity.astroexpansion.logistics_drone": "Logistics Drone",
+  
   "astroexpansion.energy": "%s FE",
   "astroexpansion.energy.stored": "Energy: %s / %s FE",
   "astroexpansion.progress": "Progress: %s%%",

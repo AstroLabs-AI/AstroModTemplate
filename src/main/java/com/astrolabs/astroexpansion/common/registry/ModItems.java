@@ -1,6 +1,7 @@
 package com.astrolabs.astroexpansion.common.registry;
 
 import com.astrolabs.astroexpansion.AstroExpansion;
+import com.astrolabs.astroexpansion.common.items.DroneItem;
 import com.astrolabs.astroexpansion.common.items.StorageDriveItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -61,6 +62,22 @@ public class ModItems {
     public static final RegistryObject<Item> STORAGE_HOUSING = ITEMS.register("storage_housing",
         () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> STORAGE_PROCESSOR = ITEMS.register("storage_processor",
+        () -> new Item(new Item.Properties()));
+    
+    // Drones
+    public static final RegistryObject<Item> MINING_DRONE = ITEMS.register("mining_drone",
+        () -> new DroneItem(new Item.Properties(), ModEntities.MINING_DRONE, "Mining"));
+    public static final RegistryObject<Item> CONSTRUCTION_DRONE = ITEMS.register("construction_drone",
+        () -> new DroneItem(new Item.Properties(), ModEntities.CONSTRUCTION_DRONE, "Construction"));
+    public static final RegistryObject<Item> FARMING_DRONE = ITEMS.register("farming_drone",
+        () -> new DroneItem(new Item.Properties(), ModEntities.FARMING_DRONE, "Farming"));
+    public static final RegistryObject<Item> COMBAT_DRONE = ITEMS.register("combat_drone",
+        () -> new DroneItem(new Item.Properties(), ModEntities.COMBAT_DRONE, "Combat"));
+    public static final RegistryObject<Item> LOGISTICS_DRONE = ITEMS.register("logistics_drone",
+        () -> new DroneItem(new Item.Properties(), ModEntities.LOGISTICS_DRONE, "Logistics"));
+    public static final RegistryObject<Item> DRONE_CORE = ITEMS.register("drone_core",
+        () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> DRONE_SHELL = ITEMS.register("drone_shell",
         () -> new Item(new Item.Properties()));
     
     public static void register(IEventBus eventBus) {

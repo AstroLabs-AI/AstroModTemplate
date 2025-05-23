@@ -68,6 +68,12 @@ public class ModCreativeTabs {
                 output.accept(ModItems.STORAGE_HOUSING.get());
                 output.accept(ModItems.STORAGE_PROCESSOR.get());
                 
+                // Drones
+                output.accept(ModBlocks.DRONE_DOCK.get());
+                output.accept(ModItems.MINING_DRONE.get());
+                output.accept(ModItems.DRONE_CORE.get());
+                output.accept(ModItems.DRONE_SHELL.get());
+                
                 // Tools
                 output.accept(ModItems.WRENCH.get());
             })

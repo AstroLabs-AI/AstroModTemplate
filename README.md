@@ -11,12 +11,11 @@ Astro Expansion transforms Minecraft into a space-age sandbox with advanced tech
 
 ## 📢 Current Status
 
-**Phase 1 Released!** 🎉 - Core systems are complete and functional. Download the latest release to start your space-age journey!
+**Phase 2 Complete!** 🎉 - Advanced technology systems are now implemented and ready for testing!
 
-- ✅ **Energy System**: Working generators, conduits, and storage
-- ✅ **Processing Machines**: Material processor and ore washer
-- ✅ **New Materials**: Titanium, Lithium, and Uranium
-- 🚧 **Coming Next**: Digital storage network and AI drones (Phase 2)
+- ✅ **Phase 1**: Energy System, Processing Machines, New Materials
+- ✅ **Phase 2**: Digital Storage Network, AI Drones, Component Assembly
+- 🚧 **Coming Next**: Space exploration and multiblock structures (Phase 3)
 
 ## 🌟 Features
 
@@ -28,12 +27,20 @@ Astro Expansion transforms Minecraft into a space-age sandbox with advanced tech
 - **Power Network**: Connect machines with energy conduits
 - **Components**: Craft circuits, processors, and energy cores
 
-### Coming Soon 🚧
-- **Digital Storage**: Store millions of items in a computerized network
-- **AI Drones**: Autonomous mining, building, and logistics
+### Phase 2 (Complete) ✅
+- **Digital Storage Network**: Store millions of items in computerized drives
+- **Storage Terminal**: Access your entire network from one interface
+- **Import/Export Buses**: Automate item transfers
+- **Component Assembler**: Craft advanced components with energy
+- **AI Drones**: 5 types - Mining, Construction, Farming, Combat, Logistics
+- **Drone Dock**: Charge and manage your drone fleet
+
+### Coming Soon (Phase 3) 🚧
+- **Space Travel**: Build rockets and explore new dimensions
+- **Multiblock Structures**: Large-scale machines and reactors
+- **Advanced Automation**: Programmable controllers and logistics
 - **Weather System**: Dynamic weather events with gameplay effects
 - **Bioengineering**: Grow and modify alien plants
-- **Space Travel**: Rockets, satellites, and space stations
 
 ## 📦 Installation
 
@@ -116,7 +123,8 @@ The built JAR will be in `build/libs/`
 
 ## 📚 Documentation
 
-- [Phase 1 Summary](PHASE_1_COMPLETE.md) - Current features
+- [Phase 1 Summary](PHASE_1_COMPLETE.md) - Core systems features
+- [Phase 2 Summary](PHASE_2_COMPLETE.md) - Advanced technology features
 - [Implementation Plan](ASTRO_EXPANSION_FULL_IMPLEMENTATION_PLAN.md) - Full roadmap
 - [Contributing Guide](CONTRIBUTING.md) - How to contribute
 - [GitHub Wiki](https://github.com/AstroLabs-AI/AstroExpansion/wiki) - Detailed guides
@@ -140,9 +148,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🎯 Roadmap
 
 - [x] Phase 1: Core Systems (Energy, Machines, Ores)
-- [ ] Phase 2: Storage & Automation (Digital Storage, Drones)
-- [ ] Phase 3: Weather & Biology (Dynamic Weather, Bioengineering)
-- [ ] Phase 4: Logistics (Pneumatic Transport, Teleportation)
+- [x] Phase 2: Storage & Automation (Digital Storage, Drones)
+- [ ] Phase 3: Space & Structures (Multiblock Machines, Advanced Automation)
+- [ ] Phase 4: Weather & Biology (Dynamic Weather, Bioengineering)
 - [ ] Phase 5: Space Age (Rockets, Space Stations, Planets)
 
 ---
