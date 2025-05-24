@@ -41,6 +41,12 @@ public class ModBlockEntities {
             BlockEntityType.Builder.of(RealityCompilerBlockEntity::new, ModBlocks.REALITY_COMPILER.get())
                 .build(null));
     
+    public static final RegistryObject<BlockEntityType<com.astrolabs.arcanecodex.common.blockentities.TemporalStabilizerBlockEntity>> TEMPORAL_STABILIZER =
+        BLOCK_ENTITIES.register("temporal_stabilizer", () ->
+            BlockEntityType.Builder.of(com.astrolabs.arcanecodex.common.blockentities.TemporalStabilizerBlockEntity::new, 
+                ModBlocks.TEMPORAL_STABILIZER.get())
+                .build(null));
+    
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);
     }

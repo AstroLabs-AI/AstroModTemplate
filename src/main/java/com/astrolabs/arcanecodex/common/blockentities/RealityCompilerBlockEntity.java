@@ -248,8 +248,7 @@ public class RealityCompilerBlockEntity extends BlockEntity implements MenuProvi
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
-        // TODO: Create Reality Compiler GUI
-        return null;
+        return new com.astrolabs.arcanecodex.client.gui.RealityCompilerMenu(id, inventory, worldPosition);
     }
     
     public List<String> getCodeLines() {

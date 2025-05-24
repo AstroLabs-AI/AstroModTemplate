@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "IOI",
+    "LQL",
+    "IOI"
+  ],
+  "key": {
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "O": {
+      "item": "minecraft:obsidian"
+    },
+    "L": {
+      "item": "minecraft:leather"
+    },
+    "Q": {
+      "item": "arcanecodex:quantum_core"
+    }
+  },
+  "result": {
+    "item": "arcanecodex:dermal_plating"
+  }
+}

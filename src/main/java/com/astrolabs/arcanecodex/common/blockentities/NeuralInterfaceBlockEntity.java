@@ -6,6 +6,7 @@ import com.astrolabs.arcanecodex.common.blocks.machines.NeuralInterfaceBlock;
 import com.astrolabs.arcanecodex.common.capabilities.ModCapabilities;
 import com.astrolabs.arcanecodex.common.capabilities.QuantumEnergyStorage;
 import com.astrolabs.arcanecodex.common.registry.ModBlockEntities;
+import com.astrolabs.arcanecodex.client.gui.holographic.ResearchTreeMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -137,8 +138,7 @@ public class NeuralInterfaceBlockEntity extends BlockEntity implements MenuProvi
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
-        // TODO: Create consciousness GUI
-        return null;
+        return new ResearchTreeMenu(id, inventory);
     }
     
     public QuantumEnergyStorage getEnergyStorage() {

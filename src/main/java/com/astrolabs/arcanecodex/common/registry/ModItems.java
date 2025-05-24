@@ -3,8 +3,7 @@ package com.astrolabs.arcanecodex.common.registry;
 import com.astrolabs.arcanecodex.ArcaneCodex;
 import com.astrolabs.arcanecodex.common.items.MemoryFragmentItem;
 import com.astrolabs.arcanecodex.common.items.RPLCodexItem;
-import com.astrolabs.arcanecodex.common.items.augments.CortexProcessorAugment;
-import com.astrolabs.arcanecodex.common.items.augments.OpticEnhancerAugment;
+import com.astrolabs.arcanecodex.common.items.augments.*;
 import com.astrolabs.arcanecodex.common.items.tools.NanoMultitool;
 import com.astrolabs.arcanecodex.common.items.tools.QuantumScannerItem;
 import net.minecraft.world.item.BlockItem;
@@ -28,6 +27,12 @@ public class ModItems {
     public static final RegistryObject<Item> NANO_MULTITOOL = ITEMS.register("nano_multitool",
         () -> new NanoMultitool(new Item.Properties().stacksTo(1).durability(2000)));
     
+    public static final RegistryObject<Item> QUANTUM_ENTANGLER = ITEMS.register("quantum_entangler",
+        () -> new com.astrolabs.arcanecodex.common.items.tools.QuantumEntangler(new Item.Properties().stacksTo(1).rarity(net.minecraft.world.item.Rarity.RARE)));
+    
+    public static final RegistryObject<Item> PROBABILITY_MANIPULATOR = ITEMS.register("probability_manipulator",
+        () -> new com.astrolabs.arcanecodex.common.items.tools.ProbabilityManipulator(new Item.Properties().stacksTo(1).rarity(net.minecraft.world.item.Rarity.EPIC)));
+    
     public static final RegistryObject<Item> QUANTUM_HARVESTER_ITEM = ITEMS.register("quantum_harvester",
         () -> new BlockItem(ModBlocks.QUANTUM_HARVESTER.get(), new Item.Properties()));
     
@@ -43,6 +48,9 @@ public class ModItems {
     public static final RegistryObject<Item> REALITY_COMPILER_ITEM = ITEMS.register("reality_compiler",
         () -> new BlockItem(ModBlocks.REALITY_COMPILER.get(), new Item.Properties()));
     
+    public static final RegistryObject<Item> TEMPORAL_STABILIZER_ITEM = ITEMS.register("temporal_stabilizer",
+        () -> new BlockItem(ModBlocks.TEMPORAL_STABILIZER.get(), new Item.Properties()));
+    
     // Components and materials
     public static final RegistryObject<Item> QUANTUM_CORE = ITEMS.register("quantum_core",
         () -> new Item(new Item.Properties().stacksTo(16).rarity(net.minecraft.world.item.Rarity.UNCOMMON)));
@@ -56,6 +64,21 @@ public class ModItems {
     
     public static final RegistryObject<Item> OPTIC_ENHANCER = ITEMS.register("optic_enhancer",
         () -> new OpticEnhancerAugment(new Item.Properties().rarity(net.minecraft.world.item.Rarity.UNCOMMON)));
+    
+    public static final RegistryObject<Item> NEURAL_LINK = ITEMS.register("neural_link",
+        () -> new NeuralLinkAugment(new Item.Properties().rarity(net.minecraft.world.item.Rarity.RARE)));
+    
+    public static final RegistryObject<Item> TEMPORAL_SYNC = ITEMS.register("temporal_sync",
+        () -> new TemporalSyncAugment(new Item.Properties().rarity(net.minecraft.world.item.Rarity.RARE)));
+    
+    public static final RegistryObject<Item> QUANTUM_CORE_AUGMENT = ITEMS.register("quantum_core_augment",
+        () -> new QuantumCoreAugment(new Item.Properties().rarity(net.minecraft.world.item.Rarity.EPIC)));
+    
+    public static final RegistryObject<Item> PHASE_SHIFT = ITEMS.register("phase_shift",
+        () -> new PhaseShiftAugment(new Item.Properties().rarity(net.minecraft.world.item.Rarity.RARE)));
+    
+    public static final RegistryObject<Item> DERMAL_PLATING = ITEMS.register("dermal_plating",
+        () -> new DermalPlatingAugment(new Item.Properties().rarity(net.minecraft.world.item.Rarity.UNCOMMON)));
     
     // RPL Codex items
     public static final RegistryObject<Item> RPL_CODEX_BASICS = ITEMS.register("rpl_codex_basics",
