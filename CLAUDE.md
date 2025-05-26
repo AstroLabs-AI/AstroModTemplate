@@ -53,3 +53,31 @@ Key directories:
 - Use capabilities for player data storage
 - Follow the tier progression system (0-5)
 - Visual effects should reflect quantum state
+
+## Testing Commands
+
+- `./gradlew test` - Run unit tests
+- `./gradlew runClient --debug-jvm` - Debug client with remote debugger on port 5005
+- `./gradlew runData` - Generate data files (recipes, loot tables, etc.)
+
+## Key Implementation Details
+
+### Energy Network Architecture
+- `QuantumConduitBlock` and `QuantumConduitBlockEntity` handle energy routing
+- Energy storage uses `QuantumEnergyStorage` capability
+- Network calculations are deferred to avoid lag spikes
+
+### Player Data Storage
+- `ConsciousnessCapability` stores augmentations and research progress
+- Attach to players via `AttachCapabilitiesEvent<Entity>`
+- Sync with `ModNetworking` packets
+
+### RPL Execution
+- `RPLParser` tokenizes and validates code
+- Commands in `reality.commands` package implement effects
+- Reality Compiler block entity executes programs
+
+### Research System
+- `ResearchTree` manages unlockable nodes
+- 3D visualization in `ResearchTreeScreen`
+- Progress stored in player capability

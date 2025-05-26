@@ -15,12 +15,17 @@ public class NeuralLinkAugment extends AugmentItem {
     
     @Override
     protected void applyAugmentEffects(Player player, IConsciousness consciousness) {
-        consciousness.expandConsciousness(50);
+        // Increase max neural charge - handled by capability
+        // The actual bonus is applied in ConsciousnessCapability based on installed augments
     }
     
     @Override
     protected void removeAugmentEffects(Player player, IConsciousness consciousness) {
-        consciousness.expandConsciousness(-50);
+        // Decrease max neural charge - handled by capability
+        long currentCharge = consciousness.getNeuralCharge();
+        if (currentCharge > consciousness.getMaxNeuralCharge()) {
+            consciousness.setNeuralCharge(consciousness.getMaxNeuralCharge());
+        }
     }
     
     @Override

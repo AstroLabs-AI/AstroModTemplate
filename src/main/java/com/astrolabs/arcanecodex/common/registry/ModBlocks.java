@@ -6,6 +6,10 @@ import com.astrolabs.arcanecodex.common.blocks.machines.NeuralInterfaceBlock;
 import com.astrolabs.arcanecodex.common.blocks.machines.QuantumHarvesterBlock;
 import com.astrolabs.arcanecodex.common.blocks.machines.RealityCompilerBlock;
 import com.astrolabs.arcanecodex.common.blocks.multiblocks.AugmentationTableBlock;
+import com.astrolabs.arcanecodex.common.blocks.multiblocks.DimensionCompilerCoreBlock;
+import com.astrolabs.arcanecodex.common.blocks.multiblocks.DimensionFrameBlock;
+import com.astrolabs.arcanecodex.common.blocks.multiblocks.DimensionStabilizerBlock;
+import com.astrolabs.arcanecodex.common.blocks.DimensionalRiftBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -55,6 +59,18 @@ public class ModBlocks {
                 .requiresCorrectToolForDrops()
                 .noOcclusion()
                 .lightLevel(state -> state.getValue(com.astrolabs.arcanecodex.common.blocks.machines.TemporalStabilizerBlock.ACTIVE) ? 10 : 0)));
+    
+    public static final RegistryObject<Block> DIMENSION_COMPILER_CORE = BLOCKS.register("dimension_compiler_core",
+        DimensionCompilerCoreBlock::new);
+    
+    public static final RegistryObject<Block> DIMENSION_FRAME = BLOCKS.register("dimension_frame",
+        DimensionFrameBlock::new);
+    
+    public static final RegistryObject<Block> DIMENSION_STABILIZER = BLOCKS.register("dimension_stabilizer",
+        DimensionStabilizerBlock::new);
+    
+    public static final RegistryObject<Block> DIMENSIONAL_RIFT = BLOCKS.register("dimensional_rift",
+        DimensionalRiftBlock::new);
     
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);

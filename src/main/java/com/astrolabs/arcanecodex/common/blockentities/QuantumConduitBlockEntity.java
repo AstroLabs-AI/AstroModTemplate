@@ -17,6 +17,8 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
 
 public class QuantumConduitBlockEntity extends BlockEntity {
     
@@ -45,9 +47,9 @@ public class QuantumConduitBlockEntity extends BlockEntity {
     
     private void balanceEnergy() {
         for (IQuantumEnergy.EnergyType type : IQuantumEnergy.EnergyType.values()) {
-            long totalEnergy = energyStorage.getEnergyStored(type);
+            AtomicLong totalEnergy = new AtomicLong(energyStorage.getEnergyStored(type));
             Map<Direction, Long> connectedEnergy = new HashMap<>();
-            int connectedCount = 1; // Include self
+            AtomicInteger connectedCount = new AtomicInteger(1); // Include self
             
             // Gather energy levels from all connected blocks
             for (Direction direction : Direction.values()) {
@@ -57,16 +59,16 @@ public class QuantumConduitBlockEntity extends BlockEntity {
                         if (energy.canReceive(direction.getOpposite(), type) || energy.canExtract(direction.getOpposite(), type)) {
                             long stored = energy.getEnergyStored(type);
                             connectedEnergy.put(direction, stored);
-                            totalEnergy += stored;
-                            connectedCount++;
+                            totalEnergy.addAndGet(stored);
+                            connectedCount.incrementAndGet();
                         }
                     });
                 }
             }
             
-            if (connectedCount > 1) {
+            if (connectedCount.get() > 1) {
                 // Calculate average energy per connection
-                long averageEnergy = totalEnergy / connectedCount;
+                long averageEnergy = totalEnergy.get() / connectedCount.get();
                 
                 // Transfer energy to balance levels
                 for (Map.Entry<Direction, Long> entry : connectedEnergy.entrySet()) {

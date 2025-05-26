@@ -12,6 +12,7 @@ import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.TierSortingRegistry;
+import net.minecraftforge.common.util.LazyOptional;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -76,9 +77,11 @@ public class NanoMultitool extends DiggerItem {
         if (stack.getOrCreateTag().contains("BoundPlayer")) {
             Player player = getOwner(stack);
             if (player != null) {
-                player.getCapability(ModCapabilities.CONSCIOUSNESS).ifPresent(consciousness -> {
+                LazyOptional<IConsciousness> cap = player.getCapability(ModCapabilities.CONSCIOUSNESS);
+                if (cap.isPresent()) {
+                    IConsciousness consciousness = cap.orElseThrow(() -> new IllegalStateException());
                     speed *= (1.0F + consciousness.getConsciousnessLevel() * 0.1F);
-                });
+                }
             }
         }
         
@@ -87,13 +90,13 @@ public class NanoMultitool extends DiggerItem {
     
     @Override
     public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        if (!attacker.level.isClientSide && attacker instanceof Player player) {
+        if (!attacker.level().isClientSide && attacker instanceof Player player) {
             // Drain neural charge on hit for bonus damage
             player.getCapability(ModCapabilities.CONSCIOUSNESS).ifPresent(consciousness -> {
                 if (consciousness.consumeNeuralCharge(50)) {
-                    target.hurt(player.level.damageSources().magic(), 2.0F);
+                    target.hurt(player.level().damageSources().magic(), 2.0F);
                     // Add visual effect
-                    player.level.broadcastEntityEvent(target, (byte) 20);
+                    player.level().broadcastEntityEvent(target, (byte) 20);
                 }
             });
         }

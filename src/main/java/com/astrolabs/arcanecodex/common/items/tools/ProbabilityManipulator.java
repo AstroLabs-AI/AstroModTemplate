@@ -15,6 +15,7 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.ExperienceOrb;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
@@ -55,7 +56,8 @@ public class ProbabilityManipulator extends Item {
     }
     
     @Override
-    public void releaseUsing(ItemStack stack, Level level, Player player, int timeLeft) {
+    public void releaseUsing(ItemStack stack, Level level, LivingEntity entity, int timeLeft) {
+        if (!(entity instanceof Player player)) return;
         int chargeTime = this.getUseDuration(stack) - timeLeft;
         
         if (chargeTime >= CHARGE_TIME && !level.isClientSide) {
@@ -72,6 +74,7 @@ public class ProbabilityManipulator extends Item {
                     applyProbabilityManipulation(level, player, charge);
                     
                     // Damage item
+                    InteractionHand hand = player.getUsedItemHand();
                     stack.hurtAndBreak(1, player, p -> p.broadcastBreakEvent(hand));
                     
                     // Cooldown

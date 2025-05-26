@@ -3,6 +3,7 @@ package com.astrolabs.arcanecodex.common.registry;
 import com.astrolabs.arcanecodex.ArcaneCodex;
 import com.astrolabs.arcanecodex.client.gui.holographic.ResearchTreeMenu;
 import com.astrolabs.arcanecodex.client.gui.RealityCompilerMenu;
+import com.astrolabs.arcanecodex.client.gui.DimensionCompilerMenu;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraftforge.common.extensions.IForgeMenuType;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -19,6 +20,9 @@ public class ModMenuTypes {
     
     public static final RegistryObject<MenuType<RealityCompilerMenu>> REALITY_COMPILER = MENU_TYPES.register("reality_compiler",
         () -> IForgeMenuType.create(RealityCompilerMenu::new));
+    
+    public static final RegistryObject<MenuType<DimensionCompilerMenu>> DIMENSION_COMPILER = MENU_TYPES.register("dimension_compiler",
+        () -> IForgeMenuType.create(DimensionCompilerMenu::new));
     
     public static void register(IEventBus eventBus) {
         MENU_TYPES.register(eventBus);

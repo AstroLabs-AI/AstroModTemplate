@@ -20,10 +20,12 @@ public class ClientSetup {
     @SubscribeEvent
     public static void onClientSetup(FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
-            MenuScreens.register(ModMenuTypes.RESEARCH_TREE.get(), (menu, inventory, title) -> 
-                new ResearchTreeScreen(inventory.player));
+            // ResearchTreeScreen is not a MenuScreen, so we need a different approach
+            // The screen will be opened directly through custom packet handling
             MenuScreens.register(ModMenuTypes.REALITY_COMPILER.get(), 
                 com.astrolabs.arcanecodex.client.gui.RealityCompilerScreen::new);
+            MenuScreens.register(ModMenuTypes.DIMENSION_COMPILER.get(),
+                com.astrolabs.arcanecodex.client.gui.DimensionCompilerScreen::new);
         });
     }
     

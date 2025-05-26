@@ -15,12 +15,12 @@ public class ConsciousnessEventHandler {
     
     @SubscribeEvent
     public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
-        if (event.phase == TickEvent.Phase.END && !event.player.level.isClientSide) {
+        if (event.phase == TickEvent.Phase.END && !event.player.level().isClientSide) {
             Player player = event.player;
             
             player.getCapability(ModCapabilities.CONSCIOUSNESS).ifPresent(consciousness -> {
                 // Passive neural charge regeneration based on consciousness level
-                if (player.level.getGameTime() % 20 == 0) { // Every second
+                if (player.level().getGameTime() % 20 == 0) { // Every second
                     long currentCharge = consciousness.getNeuralCharge();
                     long maxCharge = consciousness.getMaxNeuralCharge();
                     
@@ -39,7 +39,7 @@ public class ConsciousnessEventHandler {
     
     @SubscribeEvent
     public static void onPlayerClone(PlayerEvent.Clone event) {
-        if (!event.getEntity().level.isClientSide) {
+        if (!event.getEntity().level().isClientSide) {
             Player oldPlayer = event.getOriginal();
             Player newPlayer = event.getEntity();
             
@@ -68,7 +68,7 @@ public class ConsciousnessEventHandler {
         // Apply continuous effects from augments
         if (consciousness.hasAugment(new net.minecraft.resources.ResourceLocation(ArcaneCodex.MOD_ID, "optic_enhancer"))) {
             // Optic enhancer provides energy sight
-            if (player.level.getGameTime() % 10 == 0) {
+            if (player.level().getGameTime() % 10 == 0) {
                 // TODO: Highlight nearby energy sources
             }
         }

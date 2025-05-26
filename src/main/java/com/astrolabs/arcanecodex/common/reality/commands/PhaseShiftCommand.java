@@ -2,6 +2,7 @@ package com.astrolabs.arcanecodex.common.reality.commands;
 
 import com.astrolabs.arcanecodex.common.reality.RPLParser;
 import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
@@ -36,11 +37,13 @@ public class PhaseShiftCommand extends RPLParser.RPLCommand {
         applyPhaseShift(player, density, duration);
         
         // Visual feedback
-        level.sendParticles(
-            com.astrolabs.arcanecodex.common.particles.ModParticles.HOLOGRAPHIC.get(),
-            player.getX(), player.getY() + 1, player.getZ(),
-            20, 0.3, 0.5, 0.3, 0.01
-        );
+        if (level instanceof ServerLevel serverLevel) {
+            serverLevel.sendParticles(
+                com.astrolabs.arcanecodex.common.particles.ModParticles.HOLOGRAPHIC.get(),
+                player.getX(), player.getY() + 1, player.getZ(),
+                20, 0.3, 0.5, 0.3, 0.01
+            );
+        }
     }
     
     private void applyPhaseShift(Player player, double density, int duration) {
@@ -52,7 +55,7 @@ public class PhaseShiftCommand extends RPLParser.RPLCommand {
             player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, duration, 2, false, false));
             
             // Schedule re-solidification
-            player.level.scheduleTick(player.blockPosition(), player.level.getBlockState(player.blockPosition()).getBlock(), duration);
+            player.level().scheduleTick(player.blockPosition(), player.level().getBlockState(player.blockPosition()).getBlock(), duration);
         } else {
             // High density = more solid/resistant
             player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, duration, 4, false, false));

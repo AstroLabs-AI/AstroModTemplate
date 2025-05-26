@@ -1,6 +1,7 @@
 package com.astrolabs.arcanecodex.common.blocks;
 
 import com.astrolabs.arcanecodex.common.blockentities.QuantumConduitBlockEntity;
+import com.astrolabs.arcanecodex.common.capabilities.ModCapabilities;
 import com.astrolabs.arcanecodex.common.registry.ModBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

@@ -1,6 +1,7 @@
 package com.astrolabs.arcanecodex;
 
 import com.astrolabs.arcanecodex.common.capabilities.ModCapabilities;
+import com.astrolabs.arcanecodex.common.config.ArcaneCodexConfig;
 import com.astrolabs.arcanecodex.common.particles.ModParticles;
 import com.astrolabs.arcanecodex.common.registry.ModBlockEntities;
 import com.astrolabs.arcanecodex.common.registry.ModBlocks;
@@ -22,6 +23,8 @@ public class ArcaneCodex {
 
     public ArcaneCodex() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        
+        ArcaneCodexConfig.register();
         
         ModBlocks.register(modEventBus);
         ModItems.register(modEventBus);

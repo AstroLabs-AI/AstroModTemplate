@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ONO",
+    "NQN",
+    "ONO"
+  ],
+  "key": {
+    "O": {
+      "item": "minecraft:obsidian"
+    },
+    "N": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "Q": {
+      "item": "arcanecodex:quantum_core"
+    }
+  },
+  "result": {
+    "item": "arcanecodex:dimension_frame",
+    "count": 4
+  }
+}

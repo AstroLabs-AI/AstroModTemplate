@@ -2,6 +2,7 @@ package com.astrolabs.arcanecodex.common.network;
 
 import com.astrolabs.arcanecodex.ArcaneCodex;
 import com.astrolabs.arcanecodex.common.network.packets.ExecuteRPLPacket;
+import com.astrolabs.arcanecodex.common.network.packets.CompileDimensionPacket;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraftforge.network.NetworkRegistry;
@@ -30,6 +31,12 @@ public class ModNetworking {
             .encoder(ExecuteRPLPacket::encode)
             .decoder(ExecuteRPLPacket::new)
             .consumerMainThread(ExecuteRPLPacket::handle)
+            .add();
+        
+        net.messageBuilder(CompileDimensionPacket.class, id())
+            .encoder(CompileDimensionPacket::encode)
+            .decoder(CompileDimensionPacket::new)
+            .consumerMainThread(CompileDimensionPacket::handle)
             .add();
     }
     

@@ -1,0 +1,30 @@
+{
+  "parent": "arcanecodex:root",
+  "display": {
+    "icon": {
+      "item": "arcanecodex:quantum_scanner"
+    },
+    "title": {
+      "translate": "advancements.arcanecodex.quantum_awakening.title"
+    },
+    "description": {
+      "translate": "advancements.arcanecodex.quantum_awakening.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_scanner": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["arcanecodex:quantum_scanner"]
+          }
+        ]
+      }
+    }
+  }
+}

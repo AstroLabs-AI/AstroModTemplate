@@ -99,6 +99,8 @@ public class ResearchNode {
     public ItemStack getIcon() { return icon; }
     public int getRequiredLevel() { return requiredLevel; }
     public int getNeuralCost() { return neuralCost; }
+    public int getCost() { return neuralCost; } // Alias for UI compatibility
+    public int getTier() { return requiredLevel; } // Tier based on required level
     public ResearchCategory getCategory() { return category; }
     public float getX() { return x; }
     public float getY() { return y; }

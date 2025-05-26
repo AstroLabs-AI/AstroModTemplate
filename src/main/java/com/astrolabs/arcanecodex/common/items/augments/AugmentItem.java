@@ -94,6 +94,11 @@ public abstract class AugmentItem extends Item {
             case "skeletal" -> "Skeletal";
             case "dermal" -> "Dermal";
             case "neural" -> "Neural";
+            case "spine" -> "Spine";
+            case "shoulder" -> "Shoulder";
+            case "heart" -> "Heart";
+            case "feet" -> "Feet";
+            case "hand" -> "Hand";
             default -> "Unknown";
         };
     }

@@ -4,6 +4,7 @@ import com.astrolabs.arcanecodex.api.IQuantumEnergy;
 import com.astrolabs.arcanecodex.common.capabilities.ModCapabilities;
 import com.astrolabs.arcanecodex.common.reality.RPLParser;
 import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -57,18 +58,20 @@ public class EnergyCascadeCommand extends RPLParser.RPLCommand {
                     long inserted = energy.insertEnergy(energyType, amount, false);
                     if (inserted > 0) {
                         // Visual cascade effect
-                        level.sendParticles(
-                            com.astrolabs.arcanecodex.common.particles.ModParticles.QUANTUM_ENERGY.get(),
-                            checkPos.getX() + 0.5, checkPos.getY() + 0.5, checkPos.getZ() + 0.5,
-                            10, 0.3, 0.3, 0.3, 0.1
-                        );
+                        if (level instanceof ServerLevel serverLevel) {
+                            serverLevel.sendParticles(
+                                com.astrolabs.arcanecodex.common.particles.ModParticles.QUANTUM_ENERGY.get(),
+                                checkPos.getX() + 0.5, checkPos.getY() + 0.5, checkPos.getZ() + 0.5,
+                                10, 0.3, 0.3, 0.3, 0.1
+                            );
+                        }
                         
                         // Chain reaction - spread to nearby blocks
                         if (level.random.nextFloat() < 0.3f) {
                             for (BlockPos neighbor : BlockPos.betweenClosed(
                                 checkPos.offset(-1, -1, -1), 
                                 checkPos.offset(1, 1, 1)
-                            ).map(BlockPos::immutable).toList()) {
+                            )) {
                                 if (!neighbor.equals(checkPos)) {
                                     BlockEntity neighborBe = level.getBlockEntity(neighbor);
                                     if (neighborBe != null) {

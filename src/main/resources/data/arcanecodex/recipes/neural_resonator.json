@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "NQN",
+    "QHQ",
+    "NQN"
+  ],
+  "key": {
+    "N": {
+      "item": "arcanecodex:neural_matrix"
+    },
+    "Q": {
+      "item": "arcanecodex:quantum_core"
+    },
+    "H": {
+      "item": "minecraft:nether_star"
+    }
+  },
+  "result": {
+    "item": "arcanecodex:neural_resonator"
+  }
+}

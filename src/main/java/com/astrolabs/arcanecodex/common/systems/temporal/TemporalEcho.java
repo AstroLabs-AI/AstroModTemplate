@@ -109,9 +109,8 @@ public class TemporalEcho {
     }
     
     private void spawnEchoEntity(ServerLevel level) {
-        Optional<Entity> optEntity = EntityType.create(entityType, level);
-        if (optEntity.isPresent()) {
-            Entity entity = optEntity.get();
+        Entity entity = entityType.create(level);
+        if (entity != null) {
             
             entity.moveTo(position.x, position.y, position.z, yaw, pitch);
             entity.setDeltaMovement(motion);

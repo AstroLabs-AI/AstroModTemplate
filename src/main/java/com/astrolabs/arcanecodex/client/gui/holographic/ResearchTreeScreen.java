@@ -21,6 +21,7 @@ import org.joml.Matrix4f;
 import org.joml.Vector3f;
 
 import java.util.List;
+import java.util.Set;
 
 public class ResearchTreeScreen extends Screen {
     
@@ -110,7 +111,7 @@ public class ResearchTreeScreen extends Screen {
     private void renderSynapticLinks(PoseStack poseStack) {
         if (consciousness == null) return;
         
-        List<ResearchTree.SynapticLink> links = ResearchTree.getSynapticLinks(consciousness.getUnlockedResearch());
+        List<ResearchTree.SynapticLink> links = ResearchTree.getSynapticLinks(consciousness.getUnlockedResearch().stream().toList());
         
         RenderSystem.setShader(GameRenderer::getPositionColorShader);
         BufferBuilder buffer = Tesselator.getInstance().getBuilder();
@@ -139,12 +140,12 @@ public class ResearchTreeScreen extends Screen {
     private void renderResearchNodes(PoseStack poseStack, int mouseX, int mouseY) {
         if (consciousness == null) return;
         
-        List<ResourceLocation> unlocked = consciousness.getUnlockedResearch();
+        Set<ResourceLocation> unlocked = consciousness.getUnlockedResearch();
         hoveredNode = null;
         
         for (ResearchNode node : ResearchTree.getAllNodes()) {
             boolean isUnlocked = unlocked.contains(node.getId());
-            boolean canUnlock = node.canUnlock(unlocked, consciousness.getConsciousnessLevel());
+            boolean canUnlock = node.canUnlock(unlocked.stream().toList(), consciousness.getConsciousnessLevel());
             
             // Calculate node position
             float x = node.getX();
@@ -299,7 +300,7 @@ public class ResearchTreeScreen extends Screen {
                 
                 // Try to unlock research
                 if (!consciousness.getUnlockedResearch().contains(hoveredNode.getId()) &&
-                    hoveredNode.canUnlock(consciousness.getUnlockedResearch(), consciousness.getConsciousnessLevel())) {
+                    hoveredNode.canUnlock(consciousness.getUnlockedResearch().stream().toList(), consciousness.getConsciousnessLevel())) {
                     
                     if (consciousness.getNeuralCharge() >= hoveredNode.getCost()) {
                         // Send unlock packet to server

@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " N ",
+    "IBI",
+    "OOO"
+  ],
+  "key": {
+    "N": {
+      "item": "arcanecodex:neural_matrix"
+    },
+    "I": {
+      "item": "minecraft:iron_block"
+    },
+    "B": {
+      "item": "minecraft:iron_boots"
+    },
+    "O": {
+      "item": "minecraft:obsidian"
+    }
+  },
+  "result": {
+    "item": "arcanecodex:gravity_anchor"
+  }
+}

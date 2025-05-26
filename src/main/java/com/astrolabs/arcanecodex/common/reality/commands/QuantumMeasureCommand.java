@@ -3,6 +3,7 @@ package com.astrolabs.arcanecodex.common.reality.commands;
 import com.astrolabs.arcanecodex.common.reality.RPLParser;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
@@ -48,11 +49,13 @@ public class QuantumMeasureCommand extends RPLParser.RPLCommand {
             if (level.random.nextFloat() < 0.1f) { // 10% chance
                 // Quantum observation affects the entity
                 entity.setGlowingTag(!entity.isCurrentlyGlowing());
-                level.sendParticles(
-                    com.astrolabs.arcanecodex.common.particles.ModParticles.QUANTUM_ENERGY.get(),
-                    entity.getX(), entity.getY() + entity.getBbHeight()/2, entity.getZ(),
-                    5, 0.2, 0.2, 0.2, 0.05
-                );
+                if (level instanceof ServerLevel serverLevel) {
+                    serverLevel.sendParticles(
+                        com.astrolabs.arcanecodex.common.particles.ModParticles.QUANTUM_ENERGY.get(),
+                        entity.getX(), entity.getY() + entity.getBbHeight()/2, entity.getZ(),
+                        5, 0.2, 0.2, 0.2, 0.05
+                    );
+                }
             }
         }
     }
@@ -72,11 +75,13 @@ public class QuantumMeasureCommand extends RPLParser.RPLCommand {
         } else if (probability < 0.2f) {
             player.sendSystemMessage(Component.literal("Low probability detected - reality glitches possible!"));
             // Spawn glitch particles
-            level.sendParticles(
-                com.astrolabs.arcanecodex.common.particles.ModParticles.REALITY_GLITCH.get(),
-                pos.getX() + 0.5, pos.getY() + 1, pos.getZ() + 0.5,
-                20, 1, 1, 1, 0.1
-            );
+            if (level instanceof ServerLevel serverLevel) {
+                serverLevel.sendParticles(
+                    com.astrolabs.arcanecodex.common.particles.ModParticles.REALITY_GLITCH.get(),
+                    pos.getX() + 0.5, pos.getY() + 1, pos.getZ() + 0.5,
+                    20, 1, 1, 1, 0.1
+                );
+            }
         }
     }
     

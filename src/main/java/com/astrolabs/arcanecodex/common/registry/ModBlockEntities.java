@@ -6,6 +6,8 @@ import com.astrolabs.arcanecodex.common.blockentities.NeuralInterfaceBlockEntity
 import com.astrolabs.arcanecodex.common.blockentities.QuantumConduitBlockEntity;
 import com.astrolabs.arcanecodex.common.blockentities.QuantumHarvesterBlockEntity;
 import com.astrolabs.arcanecodex.common.blockentities.RealityCompilerBlockEntity;
+import com.astrolabs.arcanecodex.common.blockentities.DimensionCompilerCoreBlockEntity;
+import com.astrolabs.arcanecodex.common.blockentities.DimensionalRiftBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -45,6 +47,16 @@ public class ModBlockEntities {
         BLOCK_ENTITIES.register("temporal_stabilizer", () ->
             BlockEntityType.Builder.of(com.astrolabs.arcanecodex.common.blockentities.TemporalStabilizerBlockEntity::new, 
                 ModBlocks.TEMPORAL_STABILIZER.get())
+                .build(null));
+    
+    public static final RegistryObject<BlockEntityType<DimensionCompilerCoreBlockEntity>> DIMENSION_COMPILER_CORE =
+        BLOCK_ENTITIES.register("dimension_compiler_core", () ->
+            BlockEntityType.Builder.of(DimensionCompilerCoreBlockEntity::new, ModBlocks.DIMENSION_COMPILER_CORE.get())
+                .build(null));
+    
+    public static final RegistryObject<BlockEntityType<DimensionalRiftBlockEntity>> DIMENSIONAL_RIFT =
+        BLOCK_ENTITIES.register("dimensional_rift", () ->
+            BlockEntityType.Builder.of(DimensionalRiftBlockEntity::new, ModBlocks.DIMENSIONAL_RIFT.get())
                 .build(null));
     
     public static void register(IEventBus eventBus) {

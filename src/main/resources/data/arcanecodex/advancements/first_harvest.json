@@ -1,0 +1,26 @@
+{
+  "parent": "arcanecodex:quantum_awakening",
+  "display": {
+    "icon": {
+      "item": "arcanecodex:quantum_harvester"
+    },
+    "title": {
+      "translate": "advancements.arcanecodex.first_harvest.title"
+    },
+    "description": {
+      "translate": "advancements.arcanecodex.first_harvest.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "place_harvester": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "block": "arcanecodex:quantum_harvester"
+      }
+    }
+  }
+}

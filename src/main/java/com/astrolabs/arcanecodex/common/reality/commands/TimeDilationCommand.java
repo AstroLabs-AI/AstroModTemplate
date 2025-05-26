@@ -2,6 +2,7 @@ package com.astrolabs.arcanecodex.common.reality.commands;
 
 import com.astrolabs.arcanecodex.common.reality.RPLParser;
 import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 
@@ -37,11 +38,13 @@ public class TimeDilationCommand extends RPLParser.RPLCommand {
             double x = pos.getX() + 0.5 + Math.cos(angle) * radius;
             double z = pos.getZ() + 0.5 + Math.sin(angle) * radius;
             
-            level.sendParticles(
-                com.astrolabs.arcanecodex.common.particles.ModParticles.QUANTUM_ENERGY.get(),
-                x, pos.getY() + 1, z,
-                1, 0, 0.5, 0, 0.01
-            );
+            if (level instanceof ServerLevel serverLevel) {
+                serverLevel.sendParticles(
+                    com.astrolabs.arcanecodex.common.particles.ModParticles.QUANTUM_ENERGY.get(),
+                    x, pos.getY() + 1, z,
+                    1, 0, 0.5, 0, 0.01
+                );
+            }
         }
     }
     

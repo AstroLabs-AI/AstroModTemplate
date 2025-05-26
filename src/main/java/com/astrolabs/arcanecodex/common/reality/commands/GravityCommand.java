@@ -2,6 +2,7 @@ package com.astrolabs.arcanecodex.common.reality.commands;
 
 import com.astrolabs.arcanecodex.common.reality.RPLParser;
 import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
@@ -79,11 +80,13 @@ public class GravityCommand extends RPLParser.RPLCommand {
         
         // Spawn visual effects
         if (level.random.nextFloat() < 0.3f) {
-            level.sendParticles(
-                com.astrolabs.arcanecodex.common.particles.ModParticles.REALITY_GLITCH.get(),
-                center.getX() + 0.5, center.getY() + 0.5, center.getZ() + 0.5,
-                3, 0.5, 0.5, 0.5, 0.02
-            );
+            if (level instanceof ServerLevel serverLevel) {
+                serverLevel.sendParticles(
+                    com.astrolabs.arcanecodex.common.particles.ModParticles.REALITY_GLITCH.get(),
+                    center.getX() + 0.5, center.getY() + 0.5, center.getZ() + 0.5,
+                    3, 0.5, 0.5, 0.5, 0.02
+                );
+            }
         }
     }
     
