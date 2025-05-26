@@ -1,0 +1,2 @@
+// This is a placeholder - the actual JAR needs compiled .class files
+// The error occurs because Forge is looking for compiled classes, not source code

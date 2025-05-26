@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "NQN",
+    "CNC",
+    "NQN"
+  ],
+  "key": {
+    "N": {
+      "item": "arcanecodex:neural_matrix"
+    },
+    "Q": {
+      "item": "arcanecodex:quantum_core"
+    },
+    "C": {
+      "item": "minecraft:copper_ingot"
+    }
+  },
+  "result": {
+    "item": "arcanecodex:neural_link"
+  }
+}

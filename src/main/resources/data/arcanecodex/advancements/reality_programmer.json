@@ -1,0 +1,30 @@
+{
+  "parent": "arcanecodex:consciousness_expansion",
+  "display": {
+    "icon": {
+      "item": "arcanecodex:reality_compiler"
+    },
+    "title": {
+      "translate": "advancements.arcanecodex.reality_programmer.title"
+    },
+    "description": {
+      "translate": "advancements.arcanecodex.reality_programmer.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "use_compiler": {
+      "trigger": "minecraft:item_used_on_block",
+      "conditions": {
+        "location": {
+          "block": {
+            "blocks": ["arcanecodex:reality_compiler"]
+          }
+        }
+      }
+    }
+  }
+}

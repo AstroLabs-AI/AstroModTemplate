@@ -1,0 +1,41 @@
+name: Auto Commit Changes
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 */6 * * *'  # Every 6 hours
+
+jobs:
+  auto-commit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: Configure Git
+      run: |
+        git config user.name 'github-actions[bot]'
+        git config user.email 'github-actions[bot]@users.noreply.github.com'
+    
+    - name: Check for changes
+      id: verify_changes
+      run: |
+        git add -A
+        if git diff --staged --quiet; then
+          echo "::set-output name=changed::false"
+        else
+          echo "::set-output name=changed::true"
+        fi
+    
+    - name: Commit changes
+      if: steps.verify_changes.outputs.changed == 'true'
+      run: |
+        git commit -m "Auto-commit: Update development progress
+        
+        - Automated commit of recent changes
+        - Check DEVELOPMENT_LOG.md for details"
+        git push

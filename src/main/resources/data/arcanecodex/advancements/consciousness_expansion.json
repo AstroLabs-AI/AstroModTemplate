@@ -1,0 +1,30 @@
+{
+  "parent": "arcanecodex:first_harvest",
+  "display": {
+    "icon": {
+      "item": "arcanecodex:neural_interface"
+    },
+    "title": {
+      "translate": "advancements.arcanecodex.consciousness_expansion.title"
+    },
+    "description": {
+      "translate": "advancements.arcanecodex.consciousness_expansion.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "use_neural_interface": {
+      "trigger": "minecraft:item_used_on_block",
+      "conditions": {
+        "location": {
+          "block": {
+            "blocks": ["arcanecodex:neural_interface"]
+          }
+        }
+      }
+    }
+  }
+}

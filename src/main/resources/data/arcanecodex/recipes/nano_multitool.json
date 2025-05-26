@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "QDQ",
+    " S ",
+    " S "
+  ],
+  "key": {
+    "Q": {
+      "item": "arcanecodex:quantum_core"
+    },
+    "D": {
+      "item": "minecraft:diamond"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "arcanecodex:nano_multitool",
+    "count": 1
+  }
+}

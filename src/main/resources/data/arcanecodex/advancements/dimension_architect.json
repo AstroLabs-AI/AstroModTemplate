@@ -1,0 +1,26 @@
+{
+  "parent": "arcanecodex:reality_programmer",
+  "display": {
+    "icon": {
+      "item": "arcanecodex:dimension_compiler_core"
+    },
+    "title": {
+      "translate": "advancements.arcanecodex.dimension_architect.title"
+    },
+    "description": {
+      "translate": "advancements.arcanecodex.dimension_architect.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "build_compiler": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "block": "arcanecodex:dimension_compiler_core"
+      }
+    }
+  }
+}

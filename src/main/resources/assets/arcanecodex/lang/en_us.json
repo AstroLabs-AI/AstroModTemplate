@@ -1,0 +1,68 @@
+{
+  "itemGroup.arcanecodex": "Arcane Codex",
+  "creativetab.arcanecodex": "Arcane Codex",
+  
+  "block.arcanecodex.quantum_harvester": "Quantum Harvester",
+  "block.arcanecodex.neural_interface": "Neural Interface",
+  "block.arcanecodex.quantum_conduit": "Quantum Conduit",
+  "block.arcanecodex.augmentation_table": "Augmentation Table",
+  "block.arcanecodex.reality_compiler": "Reality Compiler",
+  "block.arcanecodex.temporal_stabilizer": "Temporal Stabilizer",
+  "block.arcanecodex.dimension_compiler_core": "Dimension Compiler Core",
+  "block.arcanecodex.dimension_frame": "Dimensional Frame",
+  "block.arcanecodex.dimension_stabilizer": "Dimensional Stabilizer",
+  "block.arcanecodex.dimensional_rift": "Dimensional Rift",
+  
+  "item.arcanecodex.quantum_scanner": "Quantum Scanner",
+  "item.arcanecodex.quantum_scanner.tooltip": "Scans quantum energy signatures",
+  "item.arcanecodex.memory_fragment": "Memory Fragment",
+  "item.arcanecodex.nano_multitool": "Nano-Multitool",
+  "item.arcanecodex.quantum_entangler": "Quantum Entangler",
+  "item.arcanecodex.probability_manipulator": "Probability Manipulator",
+  "item.arcanecodex.dimension_stabilizer": "Dimension Stabilizer",
+  "item.arcanecodex.quantum_core": "Quantum Core",
+  "item.arcanecodex.neural_matrix": "Neural Matrix",
+  "item.arcanecodex.cortex_processor": "Cortex Processor",
+  "item.arcanecodex.optic_enhancer": "Optic Enhancer",
+  "item.arcanecodex.neural_link": "Neural Link",
+  "item.arcanecodex.temporal_sync": "Temporal Synchronizer",
+  "item.arcanecodex.quantum_core_augment": "Quantum Core Augment",
+  "item.arcanecodex.phase_shift": "Phase Shift Module",
+  "item.arcanecodex.dermal_plating": "Dermal Plating",
+  "item.arcanecodex.synaptic_booster": "Synaptic Booster",
+  "item.arcanecodex.reactive_shield": "Reactive Shield",
+  "item.arcanecodex.neural_resonator": "Neural Resonator",
+  "item.arcanecodex.gravity_anchor": "Gravity Anchor",
+  "item.arcanecodex.quantum_tunneler": "Quantum Tunneler",
+  "item.arcanecodex.rpl_codex_basics": "RPL Codex: Basics",
+  "item.arcanecodex.rpl_codex_quantum": "RPL Codex: Quantum",
+  "item.arcanecodex.rpl_codex_temporal": "RPL Codex: Temporal",
+  
+  "gui.arcanecodex.energy_type.coherent_light": "Coherent Light",
+  "gui.arcanecodex.energy_type.quantum_foam": "Quantum Foam",
+  "gui.arcanecodex.energy_type.neural_charge": "Neural Charge",
+  "gui.arcanecodex.energy_type.temporal_flux": "Temporal Flux",
+  "gui.arcanecodex.energy_type.dark_current": "Dark Current",
+  "gui.arcanecodex.energy_type.synthesis_wave": "Synthesis Wave",
+  
+  "message.arcanecodex.dimension_compiler.not_formed": "Multiblock structure not complete!",
+  "container.arcanecodex.dimension_compiler": "Dimension Compiler",
+  
+  "advancements.arcanecodex.root.title": "Arcane Codex",
+  "advancements.arcanecodex.root.description": "Where quantum physics meets digital sorcery",
+  
+  "advancements.arcanecodex.quantum_awakening.title": "Quantum Awakening",
+  "advancements.arcanecodex.quantum_awakening.description": "Craft a Quantum Scanner to perceive energy flows",
+  
+  "advancements.arcanecodex.first_harvest.title": "First Harvest",
+  "advancements.arcanecodex.first_harvest.description": "Place a Quantum Harvester to extract environmental energy",
+  
+  "advancements.arcanecodex.consciousness_expansion.title": "Consciousness Expansion",
+  "advancements.arcanecodex.consciousness_expansion.description": "Use a Neural Interface to expand your mind",
+  
+  "advancements.arcanecodex.reality_programmer.title": "Reality Programmer",
+  "advancements.arcanecodex.reality_programmer.description": "Access a Reality Compiler to manipulate the world through code",
+  
+  "advancements.arcanecodex.dimension_architect.title": "Dimension Architect",
+  "advancements.arcanecodex.dimension_architect.description": "Build a Dimension Compiler to create new realities"
+}

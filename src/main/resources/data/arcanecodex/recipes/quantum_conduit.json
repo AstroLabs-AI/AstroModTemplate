@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "IGI",
+    "GQG",
+    "IGI"
+  ],
+  "key": {
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "G": {
+      "item": "minecraft:glass"
+    },
+    "Q": {
+      "item": "arcanecodex:quantum_core"
+    }
+  },
+  "result": {
+    "item": "arcanecodex:quantum_conduit",
+    "count": 8
+  }
+}

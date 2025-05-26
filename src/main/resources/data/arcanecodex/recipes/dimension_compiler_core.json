@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "NSN",
+    "SQS",
+    "NSN"
+  ],
+  "key": {
+    "N": {
+      "item": "arcanecodex:neural_matrix"
+    },
+    "S": {
+      "item": "minecraft:nether_star"
+    },
+    "Q": {
+      "item": "arcanecodex:quantum_core"
+    }
+  },
+  "result": {
+    "item": "arcanecodex:dimension_compiler_core"
+  }
+}

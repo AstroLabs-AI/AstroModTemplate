@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "arcanecodex:block/dimension_compiler_core"
+    }
+  }
+}

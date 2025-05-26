@@ -1,0 +1,28 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="All rights reserved"
+
+[[mods]]
+modId="arcanecodex"
+version="${file.jarVersion}"
+displayName="Arcane Codex"
+logoFile="arcanecodex.png"
+credits="Thanks to the Forge and Minecraft community!"
+authors="ExampleUser"
+description='''
+A mystical mod that brings ancient knowledge and magical coding to Minecraft.
+'''
+
+[[dependencies.arcanecodex]]
+    modId="forge"
+    mandatory=true
+    versionRange="[47,)"
+    ordering="NONE"
+    side="BOTH"
+    
+[[dependencies.arcanecodex]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.20.1,1.21)"
+    ordering="NONE"
+    side="BOTH"

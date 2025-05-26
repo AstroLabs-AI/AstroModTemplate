@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "arcanecodex:quantum_core"
+    },
+    "title": {
+      "translate": "advancements.arcanecodex.root.title"
+    },
+    "description": {
+      "translate": "advancements.arcanecodex.root.description"
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false,
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png"
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}
